@@ -2,12 +2,15 @@ import React from "react";
 
 function About() {
   return (
-    <div>
+    <div className="pageCard row">
       <div>
         <p>image</p>
       </div>
       <div>
-        <p>About Pet Friend.ly</p>
+        <p>
+          Pet Friend.ly is a social network for pet lovers. Here you can see a
+          lot of content about pets,{" "}
+        </p>
       </div>
     </div>
   );

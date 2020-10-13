@@ -11,21 +11,23 @@
 }
 
 .divHeight {
-  min-height: 92vh;
-  align-items: stretch;
+  /* min-height: 92vh;
+  align-content: stretch; */
+  height: 100vh;
 }
 
 .logoHeight {
-  max-width: 75%;
-  object-fit: cover;
-  width: auto;
-  height: auto;
+  /* max-width: 50%; */
+  object-fit: contain;
+  width: 50%;
+  /* height: 25%; */
   margin-bottom: 2vh;
+  height: 20vh;
 }
 
 .formHeight {
   /* min-height: 75vh; */
-  align-items: stretch;
+  height: 80vh;
 }
 
 .petImgHeight {
