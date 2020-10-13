@@ -1,0 +1,38 @@
+.App {
+  font-family: "Montserrat", sans-serif;
+}
+
+.titleFont {
+  font-family: "Fredoka One", cursive;
+}
+
+.pageCard {
+  padding: 4vh;
+}
+
+.divHeight {
+  min-height: 92vh;
+  align-items: stretch;
+}
+
+.logoHeight {
+  max-width: 75%;
+  object-fit: cover;
+  width: auto;
+  height: auto;
+  margin-bottom: 2vh;
+}
+
+.formHeight {
+  /* min-height: 75vh; */
+  align-items: stretch;
+}
+
+.petImgHeight {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 92vh;
+  width: auto;
+  height: auto;
+}
