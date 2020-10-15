@@ -18,6 +18,12 @@ function Profile() {
           <span>Hello Fulano</span>
         </div>
       </div>
+      <div className="sidebar"></div>
+      <div>
+        <p>Profile</p>
+        <p>Search Form</p>
+        <p>Friends</p>
+      </div>
     </div>
   );
 }
