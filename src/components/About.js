@@ -1,16 +1,30 @@
 import React from "react";
+import SmallPicture from "./Images/petsrunning.jpg";
 
 function About() {
   return (
-    <div className="pageCard row">
-      <div>
-        <p>image</p>
-      </div>
-      <div>
-        <p>
-          Pet Friend.ly is a social network for pet lovers. Here you can see a
-          lot of content about pets,{" "}
-        </p>
+    <div>
+      <div className="background-bottom1"></div>
+      <div className="half-div-card row">
+        <div className="half-max-height pb-2 col-12 col-md-4 order-md-2">
+          <img className="others-img-heigh" src={SmallPicture}></img>
+        </div>
+        <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
+          <span className="about-session">
+            <h4>Pet Friend.ly</h4>
+            <h5>
+              <p>We are a social network for pet lovers.</p>
+              <p>
+                Create a page, share the best pictures of your pets and follow
+                friends with common interests.
+              </p>
+              <p>
+                Here you can find a lot of content about pets and even adopt a
+                pet.
+              </p>
+            </h5>
+          </span>
+        </div>
       </div>
     </div>
   );

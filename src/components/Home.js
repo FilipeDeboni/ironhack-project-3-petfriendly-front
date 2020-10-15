@@ -1,21 +1,29 @@
 import React from "react";
-import LogIn from "./LogIn";
-import image from "./Images/DogCat.jpeg";
-import Logo from "./Images/PetFriendlyLogo.jpg";
+import LogInForm from "./LogInForm";
+import Logo from "./Images/PetFriendlyLogo.png";
 
 function Home() {
   return (
-    <div className="pageCard row justify-content-center">
-      <div className="divHeight pb-2 col-12 col-md-6 order-md-2">
-        <img className="logoHeight" src={Logo} alt=""></img>
+    <div>
+      <div className="home-background"></div>
+      <div className="div-card row justify-content-center">
+        <div className="max-height pb-2 col-12 col-md-6 order-md-2">
+          <img className="logo-height" src={Logo} alt=""></img>
 
-        <div className="formHeight bg-dark d-flex align-items-center">
-          <LogIn></LogIn>
+          <div
+            className="form-height d-flex align-items-center"
+            id="background"
+          >
+            <LogInForm></LogInForm>
+          </div>
         </div>
-      </div>
 
-      <div className="divHeight pb-2 col-12 col-md-6 order-md-1">
-        <img className="petImgHeight" src={image} alt=""></img>
+        <div className="max-height pb-2 col-12 col-md-6 order-md-1 d-none d-md-block">
+          <img
+            className="first-img-height"
+            src="http://placeimg.com/1920/1080/animals"
+          ></img>
+        </div>
       </div>
     </div>
   );

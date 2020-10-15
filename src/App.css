@@ -1,3 +1,4 @@
+/* Basics */
 .App {
   font-family: "Montserrat", sans-serif;
 }
@@ -6,35 +7,205 @@
   font-family: "Fredoka One", cursive;
 }
 
-.pageCard {
-  padding: 4vh;
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
 }
 
-.divHeight {
-  /* min-height: 92vh;
-  align-content: stretch; */
-  height: 100vh;
+/* Page Cards */
+
+.div-card {
+  margin: 2rem;
+  min-height: 92vh;
 }
 
-.logoHeight {
-  /* max-width: 50%; */
+.max-height {
+  height: 92vh;
+}
+
+.logo-height {
   object-fit: contain;
   width: 50%;
-  /* height: 25%; */
-  margin-bottom: 2vh;
   height: 20vh;
 }
 
-.formHeight {
-  /* min-height: 75vh; */
-  height: 80vh;
+.form-height {
+  height: 72vh;
+  border-radius: 2%;
 }
 
-.petImgHeight {
+.card {
+  border-radius: 2%;
+}
+
+.first-img-height {
   object-fit: cover;
   max-width: 100%;
   max-height: 100%;
   min-height: 92vh;
-  width: auto;
-  height: auto;
+  border-radius: 2%;
+}
+
+.half-div-card {
+  margin: 4vh;
+  min-height: 40vh;
+}
+
+.half-maxheight {
+  height: 40vh;
+}
+
+.others-img-heigh {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  height: 40vh;
+  border-radius: 2%;
+}
+
+.about-session {
+  max-width: 80%;
+}
+.text-devs {
+  color: white;
+}
+
+/* Background Colors */
+.home-background {
+  margin-top: -2rem;
+  height: 45vh;
+  width: 100%;
+  background-color: #ffd166;
+  position: absolute;
+}
+
+.profile-background {
+  /* margin-top: -2rem;
+  height: 100%;
+  width: 100%;
+  background-color: #ffd166;
+  position: absolute;
+  z-index: -1000; */
+}
+
+#background {
+  background: #073b4c;
+}
+
+.background-bottom1 {
+  background-color: #56ccf2;
+  margin-top: 4vh;
+  height: 32vh;
+  width: 100%;
+  position: absolute;
+}
+
+.background-bottom2 {
+  background-color: #073b4c;
+  margin-top: 4vh;
+  height: 32vh;
+  width: 100%;
+  position: absolute;
+}
+
+.btn-color {
+  background-color: #073b4c;
+  color: white;
+}
+
+.btn-hover:hover {
+  transition: all 0.5s ease-out;
+  background-color: #4ca1af;
+  color: white;
+}
+
+/* Profile */
+
+.profile-card {
+  background-color: white;
+  border-radius: 3%;
+}
+
+.header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  background-color: #ffd166;
+  z-index: 100;
+  top: 0;
+  /* box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75); */
+}
+
+.header-left {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.header-middle {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsivity */
+
+.header-option {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.header-option:hover {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 30px 30px;
+  border-bottom: none;
+}
+
+/* Não está funcionando quando ativo
+.header-option-active > .MuiSvgIcon-root {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 30px 30px;
+  border-bottom: none;
+} */
+
+.header-info {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .text-devs {
+    color: black;
+  }
+}
+
+@media (max-width: 875px) {
+  .others-img-heigh {
+    width: 100%;
+  }
+  .about-session {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .about-session {
+    max-width: 70%;
+  }
 }
