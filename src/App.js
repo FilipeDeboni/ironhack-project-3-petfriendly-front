@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div className="container mt-5">
+    <div className="">
       <BrowserRouter forceRefresh={true}>
         {loggedInUser._id ? (
           <Switch>
@@ -26,13 +26,16 @@ function App() {
               path="/profile"
               component={Profile}
               user={loggedInUser}
+              setUser={setLoggedInUser}
             />
-            <Route exact path="/" component={Home} />
+            <Route>
+              <Redirect to="/profile" />
+            </Route>
           </Switch>
         ) : (
           <Switch>
             <Route path="/signup" component={SignUp} />
-            {/* Verificar se caminho do login está correto */}
+            {/* login path */}
             <Route
               path="/"
               render={(props) => {

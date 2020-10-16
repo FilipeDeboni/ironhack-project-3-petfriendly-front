@@ -1,6 +1,8 @@
 import React from "react";
 
 function PostCreator() {
+  const { input, setInput } = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -11,6 +13,8 @@ function PostCreator() {
         <div>user avatar</div>
         <form>
           <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             className="post-creator-input"
             placeholder="description"
           ></input>
@@ -18,7 +22,10 @@ function PostCreator() {
       </div>
       <div className="post-creator-bottom">
         <form>
-          <div>inserir imagem</div>
+          <input
+            className="post-creator-input"
+            placeholder="URL image (optional)"
+          ></input>
         </form>
         <button></button>
       </div>

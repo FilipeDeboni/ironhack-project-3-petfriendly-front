@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import api from "../apis/index";
 import Logo from "./images/PetFriendlyLogo.png";
+import { Link } from "react-router-dom";
 
-function Profile() {
+function Profile(props) {
   const [state, setState] = useState({});
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await api.get("/profile");
-        console.log(response);
         setState({ ...response.data.user });
       } catch (err) {
         console.error(err);
@@ -16,6 +16,11 @@ function Profile() {
     }
     fetchData();
   }, []);
+
+  const handleLogout = () => {
+    // setLoggedInUser({ user: {}, token: "" });
+    console.log(props);
+  };
 
   return (
     <div className="">
@@ -30,7 +35,10 @@ function Profile() {
           <i className="header-option header-option-active fas fa-user-cog"></i>
         </div>
         <div className="header-right">
-          <span>Hello Fulano</span>
+          <Link to="/">
+            <i class="header-option fas fa-sign-out-alt"></i>
+            {handleLogout}
+          </Link>
         </div>
       </div>
       <div className="sidebar"></div>

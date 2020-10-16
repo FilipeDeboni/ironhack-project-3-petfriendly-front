@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import React, { useState } from "react";
+import api from "../apis/index";
 import { Link } from "react-router-dom";
 
 function SignUpForm() {
@@ -7,6 +7,7 @@ function SignUpForm() {
     name: "",
     email: "",
     password: "",
+    image: "",
   });
 
   function handleChange(event) {
@@ -19,9 +20,11 @@ function SignUpForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(state);
 
     try {
-      const result = await Axios.post("/api/signup", state);
+      const result = await api.post("/signup", state);
+      console.log(result);
     } catch (err) {
       console.error(err);
     }
@@ -34,7 +37,7 @@ function SignUpForm() {
           <div className="card card-signup my-5">
             <div className="card-body ">
               <h4 className="card-title text-center">Sign Up</h4>
-              <form className="form-signin" onSubmit="">
+              <form className="form-signin" onSubmit={handleSubmit}>
                 <div className="form-label-group pb-2">
                   <label for="inputText">Human name</label>
                   <input
@@ -76,13 +79,26 @@ function SignUpForm() {
                     required
                   />
                 </div>
-                <div className="custom-control custom-checkbox">
+                <label for="inputImage">Image</label>
+                <div className="form-label-group pb-3">
+                  <input
+                    type="text"
+                    id="inputImage"
+                    className="form-control"
+                    placeholder="Insert URL image"
+                    name="image"
+                    onChange={handleChange}
+                    value={state.image}
+                    required
+                  />
+                </div>
+                {/* <div className="custom-control custom-checkbox">
                   <input
                     type="checkbox"
                     className="custom-control-input"
                     id="customCheck1"
                   />
-                </div>
+                </div> */}
                 <button
                   className="btn btn-lg btn-color btn-hover btn-block mb-3"
                   type="submit"

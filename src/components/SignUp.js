@@ -23,6 +23,7 @@ function SignUp() {
           <img
             className="first-img-height"
             src="http://placeimg.com/1920/1080/animals"
+            alt="animals"
           ></img>
         </div>
       </div>

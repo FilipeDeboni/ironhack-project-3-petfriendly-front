@@ -7,7 +7,7 @@ function AboutDevs() {
       <div className="background-bottom2"></div>
       <div className="half-div-card row">
         <div className="half-max-height pb-2 col-12 col-md-4">
-          <img className="others-img-heigh" src={SmallPicture}></img>
+          <img className="others-img-heigh" src={SmallPicture} alt="dogs"></img>
         </div>
         <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
           <span className="about-session text-devs">
