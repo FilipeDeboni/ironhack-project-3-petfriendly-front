@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import SignUp from "./components/SignUp.js";
 import Profile from "./components/Profile.js";
 import PrivateRoute from "./routeComponents/auth/privateRoute";
+import Logout from "./components/Logout";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -28,6 +29,14 @@ function App() {
               user={loggedInUser}
               setUser={setLoggedInUser}
             />
+
+            <PrivateRoute
+              path="/logout"
+              component={Logout}
+              user={loggedInUser}
+              setUser={setLoggedInUser}
+            />
+
             <Route>
               <Redirect to="/profile" />
             </Route>

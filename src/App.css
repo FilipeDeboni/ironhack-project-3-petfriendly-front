@@ -131,12 +131,14 @@
 
 .header {
   padding: 15px 20px;
+
   display: flex;
   justify-content: space-between;
   position: sticky;
   background-color: #ffd166;
+  width: 100%;
   z-index: 100;
-  top: 0;
+  /* top: 0; */
   /* box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75); */
 }
 
@@ -163,7 +165,7 @@
 .header-option {
   display: flex;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 45px;
   cursor: pointer;
   font-size: 1.3rem;
 }
@@ -172,8 +174,16 @@
   background-color: white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 30px 30px;
+  padding: 50px 50px;
   border-bottom: none;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: black;
 }
 
 /* Não está funcionando quando ativo
@@ -201,9 +211,22 @@
   background-color: #eff2f5;
 }
 
+.post-header {
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+.profile-page {
+}
+
 @media (max-width: 767px) {
   .text-devs {
     color: black;
+  }
+  .header-option {
+    padding: 20px;
+  }
+  .header-option:hover {
+    padding: 20px;
   }
 }
 
@@ -219,5 +242,11 @@
 @media (min-width: 1250px) {
   .about-session {
     max-width: 70%;
+  }
+  .header-option {
+    padding: 80px;
+  }
+  .header-option:hover {
+    padding: 80px;
   }
 }
