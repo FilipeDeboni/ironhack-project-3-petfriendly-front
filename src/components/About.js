@@ -1,5 +1,5 @@
 import React from "react";
-import SmallPicture from "./Images/petsrunning.jpg";
+import SmallPicture from "./images/petsrunning.jpg";
 
 function About() {
   return (

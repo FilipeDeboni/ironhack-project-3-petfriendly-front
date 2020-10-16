@@ -1,6 +1,6 @@
 import React from "react";
 import SignUpForm from "./SignUpForm";
-import Logo from "./Images/PetFriendlyLogo.png";
+import Logo from "./images/PetFriendlyLogo.png";
 
 function SignUp() {
   return (

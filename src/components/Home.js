@@ -1,6 +1,8 @@
 import React from "react";
 import LogInForm from "./LogInForm";
-import Logo from "./Images/PetFriendlyLogo.png";
+import Logo from "./images/PetFriendlyLogo.png";
+import About from "./About";
+import AboutDevs from "./AboutDevs";
 
 function Home() {
   return (
@@ -25,6 +27,9 @@ function Home() {
           ></img>
         </div>
       </div>
+
+      <About />
+      <AboutDevs />
     </div>
   );
 }
