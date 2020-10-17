@@ -9,7 +9,9 @@ import Button from "react-bootstrap/Button";
 import api from "../../apis/index.js";
 import Logo from "../images/PetFriendlyLogo.png";
 
-function Profile(props) {
+function Profile() {
+  const [pageState, setPageState] = useState({ page: "home" });
+
   const [profile, setProfile] = useState({});
 
   const [feed, setFeed] = useState({});
@@ -24,17 +26,33 @@ function Profile(props) {
     })();
   }, []);
 
-  // Retrieves user's friends posts
   useEffect(() => {
     (async () => {
       const response = await api.get("/friendsposts");
-      // console.log(response.data);
       setFeed(response.data);
     })();
   }, []);
 
+  const changeTab = (event) => {
+    (async () => {
+      if (event.currentTarget.id === "home") {
+        const response = await api.get("/friendsposts");
+        setFeed(response.data);
+        setPageState({ page: event.currentTarget.id });
+        //
+      } else if (event.currentTarget.id === "posts") {
+        const response = await api.get("/post");
+        setFeed(response.data);
+        setPageState({ page: event.currentTarget.id });
+        //
+      } else {
+        console.log("PROFILE");
+        setPageState({ page: event.currentTarget.id });
+      }
+    })();
+  };
+
   const handleLogout = () => {
-    // props.setUser({ user: {}, token: "" });
     localStorage.clear("loggedInUser");
     history.push("/");
   };
@@ -46,9 +64,15 @@ function Profile(props) {
           <img src={Logo} alt="Pet Friendly logo" className="header-left" />
         </div>
         <div className="header-middle">
-          <i className="header-option header-option-active fas fa-home"></i>
-          <i className="header-option header-option-active fas fa-clone"></i>
-          <i className="header-option header-option-active fas fa-user-cog"></i>
+          <Button variant="primary" onClick={changeTab} id="home">
+            <i className="header-option header-option-active fas fa-home" />
+          </Button>
+          <Button variant="primary" onClick={changeTab} id="posts">
+            <i className="header-option header-option-active fas fa-clone" />
+          </Button>
+          <Button variant="primary" onClick={changeTab} id="profile">
+            <i className="header-option header-option-active fas fa-user-cog" />
+          </Button>
         </div>
         <div className="header-right">
           <Button variant="primary" onClick={handleLogout}>
@@ -73,7 +97,7 @@ function Profile(props) {
               </div>
               <div>
                 <Card.Text className="profile-description">
-                  {profile.description}
+                  {profile.about}
                 </Card.Text>
               </div>
             </Card.Body>
@@ -82,7 +106,14 @@ function Profile(props) {
           <p>Friends</p>
         </div>
         <div className="profile-columns-padding">
-          <FeedCard feed={feed} />
+          {pageState.page === "home" ? (
+            <FeedCard feed={feed} />
+          ) : pageState.page === "posts" ? (
+            <FeedCard feed={feed} />
+          ) : (
+            <FeedCard feed={feed} />
+          )}
+          {/* <FeedCard feed={feed} /> */}
         </div>
       </div>
     </div>

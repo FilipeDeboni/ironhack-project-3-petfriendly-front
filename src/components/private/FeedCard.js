@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 function FeedCard(props) {
   const allPosts = props.feed.posts;
 
-  console.log(allPosts);
   if (typeof allPosts == "undefined") {
     return <div></div>;
   }
