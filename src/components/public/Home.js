@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import api from "../apis/index";
-import { Link } from "react-router-dom";
-import Logo from "./images/PetFriendlyLogo.png";
+import api from "../../apis/index.js";
+import { Link, useHistory } from "react-router-dom";
+import Logo from "../images/PetFriendlyLogo.png";
 import About from "./About";
 import AboutDevs from "./AboutDevs";
 
@@ -10,6 +10,8 @@ function Home(props) {
     email: "",
     password: "",
   });
+
+  let history = useHistory();
 
   function handleChange(event) {
     const tempState = { ...state };
@@ -25,8 +27,8 @@ function Home(props) {
     try {
       const result = await api.post("/login", state);
       localStorage.setItem("loggedInUser", JSON.stringify(result.data));
-      console.log(result);
       // redirect to profile
+      history.push("/profile");
     } catch (err) {
       console.error(err);
     }

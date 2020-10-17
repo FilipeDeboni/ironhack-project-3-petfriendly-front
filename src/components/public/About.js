@@ -1,17 +1,17 @@
 import React from "react";
-import SmallPicture from "./images/petsrunning.jpg";
+import SmallPicture from "../images/petsrunning.jpg";
 
-function AboutDevs() {
+function About() {
   return (
     <div>
-      <div className="background-bottom2"></div>
+      <div className="background-bottom1"></div>
       <div className="half-div-card row">
-        <div className="half-max-height pb-2 col-12 col-md-4">
+        <div className="half-max-height pb-2 col-12 col-md-4 order-md-2">
           <img className="others-img-heigh" src={SmallPicture} alt="dogs"></img>
         </div>
         <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
-          <span className="about-session text-devs">
-            <h4>Devs</h4>
+          <span className="about-session">
+            <h4>Pet Friend.ly</h4>
             <h5>
               <p>We are a social network for pet lovers.</p>
               <p>
@@ -30,4 +30,4 @@ function AboutDevs() {
   );
 }
 
-export default AboutDevs;
+export default About;

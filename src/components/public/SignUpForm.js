@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import api from "../apis/index";
+import api from "../../apis/index";
 import { Link } from "react-router-dom";
 
 function SignUpForm() {

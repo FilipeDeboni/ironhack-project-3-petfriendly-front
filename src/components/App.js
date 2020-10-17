@@ -3,11 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import "./App.css";
 
-import Home from "./components/Home";
-import SignUp from "./components/SignUp.js";
-import Profile from "./components/Profile.js";
+import Home from "./public/Home";
+import SignUp from "./public/SignUp.js";
+import Profile from "./private/Profile.js";
 import PrivateRoute from "./routeComponents/auth/privateRoute";
-import Logout from "./components/Logout";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -15,6 +14,7 @@ function App() {
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedInUser");
     const parsedUser = JSON.parse(storedUser || '""');
+    // console.log(parsedUser);
     setLoggedInUser({ ...parsedUser.user });
   }, []);
 
@@ -27,16 +27,7 @@ function App() {
               path="/profile"
               component={Profile}
               user={loggedInUser}
-              setUser={setLoggedInUser}
             />
-
-            <PrivateRoute
-              path="/logout"
-              component={Logout}
-              user={loggedInUser}
-              setUser={setLoggedInUser}
-            />
-
             <Route>
               <Redirect to="/profile" />
             </Route>
@@ -45,27 +36,14 @@ function App() {
           <Switch>
             <Route path="/signup" component={SignUp} />
             {/* login path */}
-            <Route
-              path="/"
-              render={(props) => {
-                return <Home setLoggedInUser={setLoggedInUser} {...props} />;
-              }}
-            />
-            {/* <Route exact path="/" component={Home} /> */}
+            <Route path="/" component={Home} />
+            <Route>
+              <Redirect to="/" />
+            </Route>
           </Switch>
         )}
       </BrowserRouter>
     </div>
-
-    // <div className="App">
-    //   <BrowserRouter>
-    //     <Route exact path="/" component={Home} />
-    //     <Route exact path="/" component={About} />
-    //     <Route exact path="/" component={AboutDevs} />
-    //     <Route exact path="/signup" component={SignUp} />
-    //     <Route exact path="/profile" component={Profile} />
-    //   </BrowserRouter>
-    // </div>
   );
 }
 
