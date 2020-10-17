@@ -26,14 +26,14 @@ function FeedCard(props) {
               <Card.Text>{el.description}</Card.Text>
               <div className="icons-div">
                 <Button variant="primary">
-                  <i class="pr-2 fas fa-paw"></i>
+                  <i className="pr-2 fas fa-paw"></i>
                 </Button>
                 <Button variant="primary">
-                  <i class="px-2 fas fa-feather"></i>
+                  <i className="px-2 fas fa-feather"></i>
                 </Button>
                 <Button variant="primary">
-                  <i class="fas fa-egg"></i>
-                  <i class="px-2 fas fa-share-alt"></i>
+                  <i className="fas fa-egg"></i>
+                  <i className="px-2 fas fa-share-alt"></i>
                 </Button>
               </div>
             </Card.Body>
