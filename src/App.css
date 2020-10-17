@@ -189,17 +189,14 @@
 .profile-columns {
   display: flex;
   justify-content: center;
-}
-
-.profile-columns-padding {
   padding: 0 0.5rem;
 }
 
 .profile-image {
   border-radius: 50%;
   object-fit: cover;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   margin-right: 13px;
 }
 
@@ -209,12 +206,24 @@
   align-self: center;
 }
 
-.profile-user-column {
-  max-width: 16rem;
+.profile-columns-padding {
+  padding: 0 0.7rem;
 }
 
-.pic-name-div {
-  margin-bottom: 20px;
+.profile-leftdiv-size {
+  max-width: 270px;
+}
+
+.div-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 767px) {
@@ -228,9 +237,8 @@
     padding: 40px 20px;
   }
   .profile-image {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 80px;
+    height: 80px;
   }
   .profile-name {
     font-size: 1.2rem;
@@ -242,24 +250,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-  .profile-user-column {
-    max-width: none;
-    margin: 0 0.5rem;
-    width: 100vh;
-    display: flex;
-    align-items: center;
-  }
-  .responsive-small-column {
-    display: flex;
-    align-items: center;
-  }
-  .pic-name-div {
-    margin-bottom: 0;
+    padding: 0 0.2rem;
   }
   .profile-description {
     padding-left: 2rem;
+  }
+  .icons-div {
+    font-size: 1.2rem;
+  }
+  .post-header-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .div-profile {
+    flex-flow: row;
+  }
+  .profile-leftdiv-size {
+    max-width: ;
   }
 }
 
@@ -270,17 +278,14 @@
   .about-session {
     max-width: 100%;
   }
-  .profile-columns-padding {
-    padding: 0 0.5rem;
-  }
-  .post-header {
-    max-width: 550px;
-  }
 }
 
 @media (max-width: 1249px) {
   .post-header {
     max-width: 650px;
+  }
+  .icons-div {
+    font-size: 1.2rem;
   }
 }
 
@@ -297,7 +302,7 @@
   .header-option:hover {
     padding: 40px 80px;
   }
-  .profile-columns {
-    padding: 0 10vh;
+  .icons-div {
+    font-size: 1.3rem;
   }
 }

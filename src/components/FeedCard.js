@@ -12,7 +12,7 @@ function FeedCard(props) {
         i % 23 == 1 ? (
           <Card
             key={`${i}`}
-            className="post-header feed-card-size mb-3"
+            className="post-header mb-3"
             border={`${el.adoption ? "warning" : "secondary"}`}
           >
             <Card.Body>
@@ -21,7 +21,7 @@ function FeedCard(props) {
                 {el.petName}
               </Card.Subtitle>
               <Card.Text>{el.description}</Card.Text>
-              <div className="post-bottom">
+              <div className="icons-div">
                 <a variant="primary">
                   <i class="pr-2 fas fa-paw"></i>
                 </a>
