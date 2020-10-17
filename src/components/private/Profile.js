@@ -26,6 +26,7 @@ function Profile() {
     })();
   }, []);
 
+  // Gets friend posts
   useEffect(() => {
     (async () => {
       const response = await api.get("/friendsposts");
