@@ -1,42 +1,64 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-
+import api from "../apis/index";
+import Logo from "./images/PetFriendlyLogo.png";
+import { Link } from "react-router-dom";
 import FeedCard from "./FeedCard";
-
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 
-import api from "../../apis/index.js";
-import Logo from "../images/PetFriendlyLogo.png";
+import postList from "../json/posts.json";
 
 function Profile(props) {
-  const [profile, setProfile] = useState({});
+  const [state, setState] = useState({});
 
+  // Lista genérica de posts do json
   const [feed, setFeed] = useState({});
+  const [user, setUser] = useState({});
 
-  let history = useHistory();
-
-  // Gets user profile
   useEffect(() => {
-    (async () => {
-      const response = await api.get("/profile");
-      setProfile(response.data);
-    })();
+    async function fetchData() {
+      try {
+        const response = await api.get("/profile");
+        setState({ ...response.data.user });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchData();
   }, []);
 
-  // Retrieves user's friends posts
+  // useEffect(() => {
+  //   async function fetchPosts() {
+  //     try {
+  //       const response = await api.get("/posts");
+  //       setState({ ...response.data.user });
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   }
+  //   fetchPosts();
+  // }, []);
+
   useEffect(() => {
-    (async () => {
-      const response = await api.get("/friendsposts");
-      // console.log(response.data);
-      setFeed(response.data);
-    })();
+    const postArray = postList;
+    // console.log(postArray);
+    setFeed({ posts: postArray });
+  }, []);
+
+  useEffect(() => {
+    const userArray = {
+      name: "Doge Dog",
+      description: "<animal> I love humans </animal>",
+      image:
+        "https://i.pinimg.com/originals/18/5c/ae/185cae8f0e4a7d6d5f3bb29f23b8cd1d.jpg",
+    };
+
+    // console.log(postArray);
+    setUser({ ...userArray });
   }, []);
 
   const handleLogout = () => {
-    // props.setUser({ user: {}, token: "" });
-    localStorage.clear("loggedInUser");
-    history.push("/");
+    // setLoggedInUser({ user: {}, token: "" });
+    console.log(props);
   };
 
   return (
@@ -67,13 +89,13 @@ function Profile(props) {
                 <Card.Img
                   className="profile-image"
                   variant="top"
-                  src={profile.image}
+                  src={user.image}
                 />
-                <Card.Title className="profile-name">{profile.name}</Card.Title>
+                <Card.Title className="profile-name">{user.name}</Card.Title>
               </div>
               <div>
                 <Card.Text className="profile-description">
-                  {profile.description}
+                  {user.description}
                 </Card.Text>
               </div>
             </Card.Body>
