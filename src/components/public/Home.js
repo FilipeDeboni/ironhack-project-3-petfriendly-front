@@ -28,6 +28,7 @@ function Home(props) {
       const result = await api.post("/login", state);
       localStorage.setItem("loggedInUser", JSON.stringify(result.data));
       // redirect to profile
+      console.log(result.data.token);
       history.push("/profile");
     } catch (err) {
       console.error(err);

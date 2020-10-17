@@ -51,9 +51,9 @@ function Profile(props) {
           <i className="header-option header-option-active fas fa-user-cog"></i>
         </div>
         <div className="header-right">
-          <a className="text-decoration-none" href="/">
+          <Button variant="primary" onClick={handleLogout}>
             <i className="logout-button fas fa-sign-out-alt" href="/logout"></i>
-          </a>
+          </Button>
         </div>
       </div>
 
