@@ -63,7 +63,6 @@ function Profile(props) {
 
   return (
     <div className="">
-      <div className="profile-background"></div>
       <div className="header">
         <div className="header-left">
           <img src={Logo} alt="Pet Friendly logo" className="header-left" />
@@ -79,23 +78,32 @@ function Profile(props) {
           </a>
         </div>
       </div>
-      <div className="sidebar"></div>
-      <div className="row space-bewteen profile-page div-card ">
-        <div>
+
+      <div className="profile-columns pt-3">
+        <div className="profile-columns-padding ">
           {/* Profile section */}
-          <Card className="post-header mb-3" style={{ width: "16rem" }}>
-            <Card.Img variant="top" src={user.image} />
-          </Card>
-          <Card className="post-header" style={{ width: "16rem" }}>
-            <Card.Body>
-              <Card.Title className="mb-2">{user.name}</Card.Title>
-              <Card.Text>{user.description}</Card.Text>
+
+          <Card className="post-header profile-user-column">
+            <Card.Body className="responsive-small-column">
+              <div className="d-flex pic-name-div">
+                <Card.Img
+                  className="profile-image"
+                  variant="top"
+                  src={user.image}
+                />
+                <Card.Title className="profile-name">{user.name}</Card.Title>
+              </div>
+              <div>
+                <Card.Text className="profile-description">
+                  {user.description}
+                </Card.Text>
+              </div>
             </Card.Body>
           </Card>
           <p>Search Form</p>
           <p>Friends</p>
         </div>
-        <div className="col">
+        <div className="profile-columns-padding">
           <FeedCard feed={feed} />
         </div>
       </div>

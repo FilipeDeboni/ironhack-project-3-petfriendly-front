@@ -12,8 +12,7 @@ function FeedCard(props) {
         i % 23 == 1 ? (
           <Card
             key={`${i}`}
-            className="post-header mb-3"
-            style={{ width: "40rem" }}
+            className="post-header feed-card-size mb-3"
             border={`${el.adoption ? "warning" : "secondary"}`}
           >
             <Card.Body>
