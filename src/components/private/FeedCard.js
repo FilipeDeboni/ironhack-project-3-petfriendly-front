@@ -1,11 +1,14 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 function FeedCard(props) {
   const allPosts = props.feed.posts;
+
   if (typeof allPosts == "undefined") {
     return <div></div>;
   }
+
   return (
     <div>
       {allPosts.map((el, i) =>
@@ -22,16 +25,16 @@ function FeedCard(props) {
               </Card.Subtitle>
               <Card.Text>{el.description}</Card.Text>
               <div className="icons-div">
-                <a variant="primary">
+                <Button variant="primary">
                   <i class="pr-2 fas fa-paw"></i>
-                </a>
-                <a variant="primary">
+                </Button>
+                <Button variant="primary">
                   <i class="px-2 fas fa-feather"></i>
-                </a>
-                <a variant="primary">
+                </Button>
+                <Button variant="primary">
                   <i class="fas fa-egg"></i>
                   <i class="px-2 fas fa-share-alt"></i>
-                </a>
+                </Button>
               </div>
             </Card.Body>
           </Card>

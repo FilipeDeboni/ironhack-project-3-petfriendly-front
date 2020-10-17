@@ -267,7 +267,6 @@
     flex-flow: row;
   }
   .profile-leftdiv-size {
-    max-width: ;
   }
 }
 
@@ -277,6 +276,18 @@
   }
   .about-session {
     max-width: 100%;
+  }
+  .profile-columns-padding {
+    padding: 0 0.5rem;
+  }
+  .post-header {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 1249px) {
+  .post-header {
+    max-width: 650px;
   }
 }
 
