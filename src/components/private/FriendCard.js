@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import ListGroup from "react-bootstrap/ListGroup";
+import Card from "react-bootstrap/Card";
 
 import api from "../../apis/index.js";
 
@@ -19,16 +20,22 @@ function FriendCard() {
     return <div></div>;
   }
   return (
-    <div>
+    <Card className="d-none d-xs-block d-sm-block" border="secondary">
       <ListGroup>
         {friends.map((el, i) => (
           <ListGroup.Item key={i}>
-            <img className="friends-image" src={el.image} alt={`${el.name}`} />
-            <p>{el.name}</p>
+            <div className="d-flex align-items-center">
+              <img
+                className="friends-image"
+                src={el.image}
+                alt={`${el.name}`}
+              />
+              <span className="pl-3">{el.name}</span>
+            </div>
           </ListGroup.Item>
         ))}
       </ListGroup>
-    </div>
+    </Card>
   );
 }
 

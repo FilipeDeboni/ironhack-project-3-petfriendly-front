@@ -34,53 +34,73 @@ function FeedCard(props) {
       {allPosts.map((el, i) => (
         <Card
           key={`${i}`}
-          className="post-header mb-3"
-          border={`${el.adoption ? "warning" : "secondary"}`}
+          border="secondary"
+          // border={`${el.adoption ? "warning" : "secondary"}`}
+          className={`${
+            el.adoption
+              ? "adoption-background post-header mb-3"
+              : "post-header mb-3"
+          }`}
         >
           <Card.Body>
             <Card.Img variant="top" src={el.image} className="mb-3 rounded" />
-            <Card.Subtitle className="mb-2 text-muted">
-              {el.petName}
-            </Card.Subtitle>
-            <Card.Subtitle className="mb-2 text-muted">
-              {el.userID.name}
-            </Card.Subtitle>
+            <div className="d-flex justify-content-between">
+              <Card.Subtitle className="mb-2">{el.petName}</Card.Subtitle>
+
+              <Card.Subtitle className="mb-2">
+                <span className="text-muted">by </span>
+                {el.userID.name}
+              </Card.Subtitle>
+            </div>
+
             <Card.Text>{el.description}</Card.Text>
-            <div className="icons-div">
-              <Button variant="primary">
-                {el.likes.length}
-                <i className="pr-2 fas fa-paw"></i>
-              </Button>
-              <Button variant="primary">
-                {el.comments.length}
-                <i className="px-2 fas fa-feather"></i>
-              </Button>
-              <Button variant="primary">
-                <i className="fas fa-egg"></i>
-                <i className="px-2 fas fa-share-alt"></i>
-              </Button>
-              {/* <FacebookShareButton url={shareUrl}/> */}
-              {el.adoption ? (
-                <>
-                  <Button
-                    variant="primary"
-                    onClick={() => setModalShow({ ...modalShow, state: true })}
-                  >
-                    Adopt
-                  </Button>
-                  <ModalTextAdopt
-                    show={modalShow.state}
-                    onHide={() => setModalShow({ ...modalShow, state: false })}
-                    onAccept={() => setModalShow({ form: true, state: false })}
-                  />
-                  <ModalFormAdopt
-                    show={modalShow.form}
-                    onHide={() => setModalShow({ ...modalShow, form: false })}
-                  />
-                </>
-              ) : (
-                ""
-              )}
+            <div className="icons-div d-flex justify-content-between">
+              <div>
+                <Button className="post-icon" variant="primary">
+                  <i className="pr-1 fas fa-paw"></i>
+                  {el.likes.length}
+                  <span className=""> likes</span>
+                </Button>
+                <Button className="post-icon" variant="primary">
+                  <i className="pr-1 fas fa-feather"></i>
+                  {el.comments.length}
+                  <span className=""> comments</span>
+                </Button>
+                <Button className="post-icon" variant="primary">
+                  <i className="pr-1 fas fa-egg"></i>
+                  <span className=""> share</span>
+                </Button>
+                {/* <FacebookShareButton url={shareUrl}/> */}
+              </div>
+              <div>
+                {el.adoption ? (
+                  <>
+                    <Button
+                      variant="primary"
+                      onClick={() =>
+                        setModalShow({ ...modalShow, state: true })
+                      }
+                    >
+                      Adopt
+                    </Button>
+                    <ModalTextAdopt
+                      show={modalShow.state}
+                      onHide={() =>
+                        setModalShow({ ...modalShow, state: false })
+                      }
+                      onAccept={() =>
+                        setModalShow({ form: true, state: false })
+                      }
+                    />
+                    <ModalFormAdopt
+                      show={modalShow.form}
+                      onHide={() => setModalShow({ ...modalShow, form: false })}
+                    />
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </Card.Body>
         </Card>

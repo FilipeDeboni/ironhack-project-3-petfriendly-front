@@ -95,20 +95,36 @@ function Profile() {
           <img src={Logo} alt="Pet Friendly logo" className="header-left" />
         </div>
         <div className="header-middle">
-          <Button variant="primary" onClick={changeTab} id="home">
-            <i className="header-option header-option-active fas fa-home"></i>
-          </Button>
-          <Button variant="primary" onClick={changeTab} id="posts">
-            <i className="header-option header-option-active fas fa-clone"></i>
-          </Button>
-          <Button variant="primary" onClick={changeTab} id="profile">
-            <i className="header-option header-option-active fas fa-user-cog"></i>
-          </Button>
+          <a
+            className="header-button header-button-active"
+            onClick={changeTab}
+            id="home"
+          >
+            <i className="fas fa-home"></i>
+          </a>
+          <a
+            className="header-button header-button-active"
+            onClick={changeTab}
+            id="posts"
+          >
+            <i className="fas fa-clone"></i>
+          </a>
+          <a
+            className="header-button header-button-active"
+            onClick={changeTab}
+            id="profile"
+          >
+            <i className="fas fa-user-cog"></i>
+          </a>
         </div>
         <div className="header-right">
-          <Button variant="primary" onClick={handleLogout}>
+          <Button
+            className="logout-button"
+            variant="primary"
+            onClick={handleLogout}
+          >
             {/* <a className="text-decoration-none" href="/"> */}
-            <i className="logout-button fas fa-sign-out-alt" href="/logout"></i>
+            <i className="fas fa-sign-out-alt" href="/logout"></i>
             {/* </a> */}
           </Button>
         </div>
@@ -130,12 +146,12 @@ function Profile() {
               </div>
               <div>
                 <Card.Text className="profile-description">
-                  {profile.description}
+                  {profile.about}
                 </Card.Text>
               </div>
             </Card.Body>
           </Card>
-          <Card className="profile-leftdiv-size mt-3" border="secondary">
+          <Card className="profile-leftdiv-size my-3" border="secondary">
             <Card.Body>
               <Form>
                 <Form.Group controlId="formGroupEmail">
