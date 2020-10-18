@@ -8,10 +8,10 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 // import FormFile from "react-bootstrap/FormFile";
 
-function ModalAdopt(props) {
-  console.log(props);
-  console.log(props.formShow);
-  const { onHide, show, ...rest } = props;
+function ModalTextAdopt(props) {
+  // console.log(props);
+  // console.log(props.formShow);
+  const { onHide, show } = props;
   const modalProp = { onHide, show };
 
   return (
@@ -24,21 +24,30 @@ function ModalAdopt(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Terms of adoption:
+          T adoption:
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">
         <Container>
           <p>
-            We know many families have two working adults and we don't expect
-            anyone to be a super hero and quit a day job just to be able to take
-            home a puppy. Every puppy family has different needs, and this
-            information form helps us identify who needs what information and
-            what homes might make the best fit. If you're a veteran poodle
-            owner, we don't want to waste your time regaling things you already
-            know; by the same token, if this is your first puppy or first
-            poodle, we want to make sure you leave prepared for what life with a
-            puppy may bring.
+            We know many families have working adults and we don't expect anyone
+            to be a super hero and quit a day job just to be able to take home a
+            puppy. Every puppy family has different needs, and this information
+            form helps us identify who needs what information and what homes
+            might make the best fit.
+          </p>
+          <p>
+            But by adopting the animal described, you must make sure that you
+            able to assume custody and responsibility for this animal and that
+            you can provide all the care that this animal requires. Please,
+            responsible in preserving the health and do not transmit the
+            possession of this animal to others without the donor's knowledge.
+          </p>
+          <p>
+            And finally, to asure the safeness of the animal, the donor may want
+            access to the animal's location to check its condition and if finds
+            an inadequate situation for the animal's well-being, I will lose his
+            guard, without prejudice to legal penalties.
           </p>
         </Container>
       </Modal.Body>
@@ -57,4 +66,4 @@ function ModalAdopt(props) {
   );
 }
 
-export default ModalAdopt;
+export default ModalTextAdopt;

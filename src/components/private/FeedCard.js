@@ -75,6 +75,8 @@ function FeedCard(props) {
                   />
                   <ModalFormAdopt
                     show={modalShow.form}
+                    user={props.user}
+                    pet={el}
                     onHide={() => setModalShow({ ...modalShow, form: false })}
                   />
                 </>

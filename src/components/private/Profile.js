@@ -130,7 +130,7 @@ function Profile() {
               </div>
               <div>
                 <Card.Text className="profile-description">
-                  {profile.description}
+                  {profile.about}
                 </Card.Text>
               </div>
             </Card.Body>
@@ -175,9 +175,9 @@ function Profile() {
         </div>
         <div className="profile-columns-padding">
           {pageState.page === "home" ? (
-            <FeedCard feed={feed} />
+            <FeedCard feed={feed} user={profile} />
           ) : pageState.page === "posts" ? (
-            <FeedCard feed={feed} />
+            <FeedCard feed={feed} user={profile} />
           ) : (
             <FeedCard feed={feed} />
           )}
