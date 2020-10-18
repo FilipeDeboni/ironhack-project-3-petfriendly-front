@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import ModalAdopt from "./ModalAdopt";
+import ModalTextAdopt from "./ModalTextAdopt";
+import ModalFormAdopt from "./ModalFormAdopt";
 
 // import {
 //   EmailShareButton,
@@ -19,7 +20,8 @@ import ModalAdopt from "./ModalAdopt";
 // } from "react-share";
 
 function FeedCard(props) {
-  const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState({ state: false, form: false });
 
   const allPosts = props.feed.posts;
 
@@ -60,12 +62,20 @@ function FeedCard(props) {
               {/* <FacebookShareButton url={shareUrl}/> */}
               {el.adoption ? (
                 <>
-                  <Button variant="primary" onClick={() => setModalShow(true)}>
+                  <Button
+                    variant="primary"
+                    onClick={() => setModalShow({ ...modalShow, state: true })}
+                  >
                     Adopt
                   </Button>
-                  <ModalAdopt
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
+                  <ModalTextAdopt
+                    show={modalShow.state}
+                    onHide={() => setModalShow({ ...modalShow, state: false })}
+                    onAccept={() => setModalShow({ form: true, state: false })}
+                  />
+                  <ModalFormAdopt
+                    show={modalShow.form}
+                    onHide={() => setModalShow({ ...modalShow, form: false })}
                   />
                 </>
               ) : (

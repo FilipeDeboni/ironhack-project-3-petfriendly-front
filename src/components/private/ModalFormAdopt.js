@@ -1,22 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import FormFile from "react-bootstrap/FormFile";
+// import FormFile from "react-bootstrap/FormFile";
 
 function ModalAdopt(props) {
   return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
+    <Modal
+      {...props}
+      backdrop={false}
+      animation={false}
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Using Grid in Modal
+          Terms of adoption:
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">
         <Container>
+          By adopting the animal described above, I declare myself able to
+          assume custody and responsibility for this animal and that I am aware
+          of all the care that this animal requires in addition to being able to
+          guard and monitor it, compromising me to provide good housing and food
+          conditions, as well as physical space that allows the animal to
+          exercise. I am responsible for preserving the health. I undertake not
+          to transmit the possession of this animal to others without the
+          donor's knowledge. I also undertake to allow the donor to access the
+          animal's location to check its condition. I am aware that if the donor
+          finds an inadequate situation for the animal's well-being, I will lose
+          his guard, without prejudice to legal penalties.
           <Row>
             <Col xs={12} md={8}>
               .col-xs-12 .col-md-8
@@ -25,7 +42,6 @@ function ModalAdopt(props) {
               .col-xs-6 .col-md-4
             </Col>
           </Row>
-
           <Row>
             <Col xs={6} md={4}>
               .col-xs-6 .col-md-4
@@ -41,6 +57,7 @@ function ModalAdopt(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
+
         {/* <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
