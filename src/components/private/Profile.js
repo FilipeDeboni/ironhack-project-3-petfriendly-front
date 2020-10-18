@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import FeedCard from "./FeedCard";
+import FriendCard from "./FriendCard";
 
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -19,6 +20,28 @@ function Profile() {
   const [feed, setFeed] = useState({});
 
   let history = useHistory();
+
+  const doge = {
+    adoption: false,
+    comments: [
+      "5f8b4ee70f79632ff06e33cf",
+      "5f8b4ee80f79632ff06e403b",
+      "5f8b4ee90f79632ff06e4905",
+      "5f8b4ee90f79632ff06e4b84",
+      "5f8b4eea0f79632ff06e4f8c",
+    ],
+    description: "Many description. Such website. Much wow. ",
+    image:
+      "https://i.pinimg.com/originals/18/5c/ae/185cae8f0e4a7d6d5f3bb29f23b8cd1d.jpg",
+    likes: [
+      "5f8b4ced0f79632ff06e2681",
+      "5f8b4ced0f79632ff06e26d2",
+      "5f8b4ced0f79632ff06e276c",
+    ],
+    petName: "Doge Dog",
+    tag: [],
+    userID: "5f8b4ced0f79632ff06e2610",
+  };
 
   // Gets user profile
   useEffect(() => {
@@ -47,12 +70,14 @@ function Profile() {
         //
       } else if (event.currentTarget.id === "posts") {
         const response = await api.get("/post");
+        const newFeed = [...response.data.posts, doge];
         // console.log(response.data);
-        setFeed(response.data);
+        // setFeed(newFeed);
+        setFeed({ posts: newFeed });
         setPageState({ page: event.currentTarget.id });
         //
       } else {
-        console.log("PROFILE");
+        // console.log("PROFILE");
         setPageState({ page: event.currentTarget.id });
       }
     })();
@@ -142,11 +167,11 @@ function Profile() {
               </Form>
             </Card.Body>
           </Card>
-          <Card className="profile-leftdiv-size mt-3 mb-3" border="secondary">
-            <Card.Body>
-              <p>Friends</p>
-            </Card.Body>
-          </Card>
+          {/* <Card className="profile-leftdiv-size mt-3 mb-3" border="secondary">
+            <Card.Body> */}
+          <FriendCard></FriendCard>
+          {/* </Card.Body>
+          </Card> */}
         </div>
         <div className="profile-columns-padding">
           {pageState.page === "home" ? (

@@ -200,6 +200,13 @@
   margin-right: 13px;
 }
 
+.friends-image {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+}
+
 .profile-name {
   margin: 0;
   display: flex;
@@ -239,6 +246,10 @@
   .profile-image {
     width: 80px;
     height: 80px;
+  }
+  .friends-image {
+    width: 50px;
+    height: 50px;
   }
   .profile-name {
     font-size: 1.2rem;
