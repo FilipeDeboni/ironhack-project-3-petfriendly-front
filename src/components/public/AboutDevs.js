@@ -10,7 +10,7 @@ function AboutDevs() {
           <img className="others-img-heigh" src={SmallPicture} alt="dogs"></img>
         </div>
         <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
-          <span className="about-session text-devs">
+          <span className="about-session text-white">
             <h4>Devs</h4>
             <h5>
               <p>We are a social network for pet lovers.</p>

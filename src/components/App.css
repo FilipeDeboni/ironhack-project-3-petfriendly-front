@@ -69,7 +69,7 @@
 .about-session {
   max-width: 80%;
 }
-.text-devs {
+.text-white {
   color: white;
 }
 
@@ -87,7 +87,7 @@
 }
 
 .background-bottom1 {
-  background-color: #56ccf2;
+  background-color: #4ca1af;
   margin-top: 4vh;
   height: 32vh;
   width: 100%;
@@ -264,8 +264,29 @@
   background-color: #fce5ae;
 }
 
+@media (max-width: 575px) {
+  .profile-leftdiv-size {
+    max-width: none;
+    width: 91vw !important;
+  }
+  .profile-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.2rem;
+  }
+  .post-header-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .div-profile {
+    flex-flow: row;
+  }
+}
+
 @media (max-width: 767px) {
-  .text-devs {
+  .text-white {
     color: black;
   }
   .header-button {
@@ -287,28 +308,6 @@
   }
   .profile-description {
     font-size: 0.9rem;
-  }
-  .profile-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0.2rem;
-  }
-  .profile-description {
-    padding-left: 2rem;
-  }
-  .icons-div {
-    font-size: 1.2rem;
-  }
-  .post-header-profile {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .div-profile {
-    flex-flow: row;
-  }
-  .profile-leftdiv-size {
   }
 }
 
