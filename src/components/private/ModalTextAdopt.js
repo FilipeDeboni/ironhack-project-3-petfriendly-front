@@ -24,7 +24,7 @@ function ModalTextAdopt(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          T adoption:
+          Terms of adoption:
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">

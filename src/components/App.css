@@ -157,20 +157,28 @@
 
 /* Responsivity */
 
-.header-option {
+.header-button {
   display: flex;
   align-items: center;
   padding: 0 50px;
   cursor: pointer;
   font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: black;
 }
 
-.header-option:hover {
+#style:focus {
+  background-color: yellow;
+}
+
+.header-button:hover {
   background-color: white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 40px 50px;
   border-bottom: none;
+  color: black;
 }
 
 .logout-button {
@@ -178,6 +186,25 @@
   align-items: center;
   cursor: pointer;
   font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: black;
+}
+
+.logout-button:hover {
+  background-color: transparent;
+  border: transparent;
+  color: black;
+}
+
+.post-icon {
+  background-color: transparent;
+  border: transparent;
+  color: black;
+}
+
+.post-icon:hover {
+  background-color: #ffd166;
   color: black;
 }
 
@@ -233,14 +260,23 @@
   align-items: center;
 }
 
+.adoption-background {
+  background-color: #fce5ae;
+}
+
+.header-button {
+  outline: none !important;
+}
+
 @media (max-width: 767px) {
   .text-devs {
     color: black;
   }
-  .header-option {
+
+  .header-button {
     padding: 40px 20px;
   }
-  .header-option:hover {
+  .header-button:hover {
     padding: 40px 20px;
   }
   .profile-image {
@@ -315,13 +351,13 @@
   .about-session {
     max-width: 70%;
   }
-  .header-option {
+  .header-button {
     padding: 40px 80px;
   }
   .post-header {
     max-width: 700px;
   }
-  .header-option:hover {
+  .header-button:hover {
     padding: 40px 80px;
   }
   .icons-div {
