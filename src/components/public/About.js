@@ -1,5 +1,5 @@
 import React from "react";
-import SmallPicture from "../images/petsrunning.jpg";
+import SmallPicture from "../images/frontcatdog.png";
 
 function About() {
   return (
@@ -10,7 +10,7 @@ function About() {
           <img className="others-img-heigh" src={SmallPicture} alt="dogs"></img>
         </div>
         <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
-          <span className="about-session">
+          <span className="about-session text-white">
             <h4>Pet Friend.ly</h4>
             <h5>
               <p>We are a social network for pet lovers.</p>

@@ -172,7 +172,7 @@ function Profile() {
         </div>
         <div className="header-right">
           <Button
-            className="logout-button"
+            className="logout-button btn-color btn-hover "
             variant="primary"
             onClick={handleLogout}
           >
@@ -246,7 +246,7 @@ function Profile() {
                   <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Avaiable for Adoption" />
                   </Form.Group>
-                  <Button type="submit" className="mb-2">
+                  <Button type="submit" className="btn-color btn-hover mb-2">
                     Submit
                   </Button>
                 </Form>
