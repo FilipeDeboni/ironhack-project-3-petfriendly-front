@@ -92,13 +92,6 @@ function SignUpForm() {
                     required
                   />
                 </div>
-                {/* <div className="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customCheck1"
-                  />
-                </div> */}
                 <button
                   className="btn btn-lg btn-color btn-hover btn-block mb-3"
                   type="submit"
@@ -106,7 +99,7 @@ function SignUpForm() {
                   Create account
                 </button>
                 <Link
-                  className="btn btn-lg btn-secondary btn-hover btn-block"
+                  className="btn btn-lg btn-secondary btn-hover btn-block d-none d-xs-block d-sm-block"
                   type="submit"
                   to="/"
                 >

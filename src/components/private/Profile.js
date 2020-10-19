@@ -155,7 +155,7 @@ function Profile() {
             <Card.Body>
               <Form>
                 <Form.Group controlId="formGroupEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>Search for Awesome Posts</Form.Label>
                   <Form.Control size="sm" type="text" placeholder="Pet Name" />
                 </Form.Group>
                 <Form.Row>
