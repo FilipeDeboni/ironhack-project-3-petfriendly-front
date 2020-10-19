@@ -32,8 +32,9 @@ function FriendCard(props) {
       <ListGroup>
         {allFriends.map((el, i) => (
           <ListGroup.Item key={i}>
-            <div className="d-flex align-items-center">
+            <div className="d-flex">
               <Button
+                className="btn-friends"
                 style={{ cursor: "pointer" }}
                 onClick={friendProfile}
                 id={`goto-${el._id}`}
@@ -48,7 +49,11 @@ function FriendCard(props) {
             </div>
 
             {props.deleteOpt ? (
-              <Button id={`delete-${el._id}`} onClick={deleteFriend}>
+              <Button
+                className="btn-hover"
+                id={`delete-${el._id}`}
+                onClick={deleteFriend}
+              >
                 Delete
               </Button>
             ) : (

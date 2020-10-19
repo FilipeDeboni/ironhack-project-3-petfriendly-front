@@ -200,18 +200,23 @@ function Profile(props) {
                     {profile.about}
                   </Card.Text>
                 </div>
+                <div className="pt-3">
+                  <Button
+                    className="btn-color btn-hover"
+                    variant="primary"
+                    onClick={() => setModal(true)}
+                  >
+                    + Post
+                  </Button>
+                  <ModalCreatePost
+                    userID={profile._id}
+                    show={modal}
+                    onHide={() => setModal(false)}
+                  />
+                </div>
               </Card.Body>
             </Card>
-            <>
-              <Button variant="primary" onClick={() => setModal(true)}>
-                + Post
-              </Button>
-              <ModalCreatePost
-                userID={profile._id}
-                show={modal}
-                onHide={() => setModal(false)}
-              />
-            </>
+
             <Card className="profile-leftdiv-size my-3" border="secondary">
               <Card.Body>
                 <Form>

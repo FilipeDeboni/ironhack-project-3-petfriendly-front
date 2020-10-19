@@ -12,7 +12,7 @@ function About() {
         <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
           <span className="about-session text-white">
             <h4>Pet Friend.ly</h4>
-            <h5>
+            <span>
               <p>We are a social network for pet lovers.</p>
               <p>
                 Create a page, share the best pictures of your pets and follow
@@ -22,7 +22,7 @@ function About() {
                 Here you can find a lot of content about pets and even adopt a
                 pet.
               </p>
-            </h5>
+            </span>
           </span>
         </div>
       </div>

@@ -56,7 +56,7 @@ function UserPage(props) {
   };
 
   return (
-    <div>
+    <div className="div-card">
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formImage">
           <img className="friends-image" src={form.image} alt="profile" />
@@ -95,7 +95,7 @@ function UserPage(props) {
             value={form.about}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button className="mb-3" variant="primary" type="submit">
           Submit
         </Button>
 
