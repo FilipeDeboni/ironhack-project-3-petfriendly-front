@@ -105,11 +105,13 @@
 .btn-color {
   background-color: #073b4c;
   color: white;
+  border: none;
 }
 
 .btn-hover:hover {
   transition: all 0.5s ease-out;
   background-color: #4ca1af;
+  border: none;
   color: white;
 }
 
@@ -155,6 +157,18 @@
   padding: 15px;
 }
 
+.btn-friends {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+.btn-friends:hover {
+  background-color: #ffd166;
+  border: none;
+  color: black;
+}
+
 /* Responsivity */
 
 .header-button {
@@ -169,7 +183,7 @@
 }
 
 #style:focus {
-  background-color: yellow;
+  background-color: #ffd166;
 }
 
 .header-button:hover {
@@ -263,6 +277,9 @@
 .adoption-background {
   background-color: #fce5ae;
 }
+.header-button {
+  outline: none !important;
+}
 
 @media (max-width: 575px) {
   .profile-leftdiv-size {
@@ -289,6 +306,7 @@
   .text-white {
     color: black !important;
   }
+
   .header-button {
     padding: 40px 20px;
   }

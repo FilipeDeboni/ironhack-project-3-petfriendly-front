@@ -39,7 +39,7 @@ function SignUpForm() {
               <h4 className="card-title text-center">Sign Up</h4>
               <form className="form-signin" onSubmit={handleSubmit}>
                 <div className="form-label-group pb-2">
-                  <label for="inputText">Human name</label>
+                  <label>Human name</label>
                   <input
                     type="text"
                     id="inputText"
@@ -49,11 +49,11 @@ function SignUpForm() {
                     onChange={handleChange}
                     value={state.name}
                     required
-                    autofocus
+                    autoFocus
                   />
                 </div>
                 <div className="form-label-group pb-2">
-                  <label for="inputEmail">Email address</label>
+                  <label>Email address</label>
                   <input
                     type="email"
                     id="inputEmail"
@@ -63,10 +63,9 @@ function SignUpForm() {
                     onChange={handleChange}
                     value={state.email}
                     required
-                    autofocus
                   />
                 </div>
-                <label for="inputPassword">Password</label>
+                <label>Password</label>
                 <div className="form-label-group pb-1">
                   <input
                     type="password"
@@ -79,7 +78,7 @@ function SignUpForm() {
                     required
                   />
                 </div>
-                <label for="inputImage">Image</label>
+                <label>Image</label>
                 <div className="form-label-group pb-3">
                   <input
                     type="text"
@@ -92,6 +91,13 @@ function SignUpForm() {
                     required
                   />
                 </div>
+                {/* <div className="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    id="customCheck1"
+                  />
+                </div> */}
                 <button
                   className="btn btn-lg btn-color btn-hover btn-block mb-3"
                   type="submit"
@@ -99,7 +105,7 @@ function SignUpForm() {
                   Create account
                 </button>
                 <Link
-                  className="btn btn-lg btn-secondary btn-hover btn-block d-none d-xs-block d-sm-block"
+                  className="btn btn-lg btn-secondary btn-hover btn-block"
                   type="submit"
                   to="/"
                 >

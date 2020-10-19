@@ -10,25 +10,25 @@ function AboutDevs() {
           <img className="others-img-heigh" src={SmallPicture} alt="dogs"></img>
         </div>
         <div className="half-max-height content-center pb-2 col-12 col-md-8 order-md-1">
-          <span className="text-white">
-            <h4>Developers</h4>
-            <span className="row">
-              <span className="col px-1">
-                <h5>Arthur Farneze</h5>
-                <p>
-                  Apaixonado por computação, tecnologia e curiosidades em geral.
-                  Engenheiro Elétrico e Full-Stack Web Dev.
-                </p>
+          <span className="about-session text-white">
+            <h4>Devs</h4>
+            <div className="row">
+              <span className="col">
+                <h5>Arthur Franeze</h5>
+                <span>
+                  We are a social network for pet lovers. Here you can find a
+                  lot of content about pets and even adopt a pet.
+                </span>
               </span>
-              <span className="col px-1">
+              <span className="col">
                 <h5>Filipe Deboni</h5>
-                <p>
+                <span>
                   A Front-End Web Dev with a background in Psychology and
                   Strategic Planning in Technology. Also, a lifelong learning
-                  enthusiast wich loves games.
-                </p>
+                  enthusiast.
+                </span>
               </span>
-            </span>
+            </div>
           </span>
         </div>
       </div>

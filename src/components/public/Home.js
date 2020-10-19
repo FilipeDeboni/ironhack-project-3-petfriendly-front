@@ -23,12 +23,11 @@ function Home(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(state);
     try {
       const result = await api.post("/login", state);
+      console.log(JSON.stringify(result.data));
       localStorage.setItem("loggedInUser", JSON.stringify(result.data));
-      // redirect to profile
-      console.log(result.data.token);
       history.push("/profile");
     } catch (err) {
       console.error(err);

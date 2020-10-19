@@ -22,9 +22,11 @@ import ModalFormAdopt from "./ModalFormAdopt";
 function FeedCard(props) {
   // const [modalShow, setModalShow] = useState(false);
   const [modalShow, setModalShow] = useState({ state: false, form: false });
-
+  // console.log(props.user);
   const allPosts = props.feed.posts;
+  // console.log(props);
 
+  const userID = props.user._id;
   if (typeof allPosts == "undefined") {
     return <div></div>;
   }
@@ -44,24 +46,38 @@ function FeedCard(props) {
         >
           <Card.Body>
             <Card.Img variant="top" src={el.image} className="mb-3 rounded" />
+
             <div className="d-flex justify-content-between">
               <Card.Subtitle className="mb-2">{el.petName}</Card.Subtitle>
 
-              <Card.Subtitle className="mb-2">
-                <span className="text-muted">by </span>
-                {el.userID.name}
-              </Card.Subtitle>
+              {el.userID.name ? (
+                <Card.Subtitle className="mb-2">
+                  <span className="text-muted">by </span>
+                  {el.userID.name}
+                </Card.Subtitle>
+              ) : (
+                ""
+              )}
             </div>
-
             <Card.Text>{el.description}</Card.Text>
             <div className="icons-div d-flex justify-content-between">
               <div>
-                <Button className="post-icon" variant="primary">
+                <Button
+                  className="post-icon"
+                  variant="primary"
+                  id={el._id}
+                  onClick={props.handleLike}
+                >
                   <i className="pr-1 fas fa-paw"></i>
                   {el.likes.length}
                   <span className=""> likes</span>
                 </Button>
-                <Button className="post-icon" variant="primary">
+                <Button
+                  className="post-icon"
+                  variant="primary"
+                  id={el._id}
+                  onClick={props.handleComments}
+                >
                   <i className="pr-1 fas fa-feather"></i>
                   {el.comments.length}
                   <span className=""> comments</span>
@@ -73,7 +89,17 @@ function FeedCard(props) {
                 {/* <FacebookShareButton url={shareUrl}/> */}
               </div>
               <div>
-                {el.adoption ? (
+                {el.userID === userID ? (
+                  <>
+                    <Button
+                      variant="danger"
+                      id={el._id}
+                      onClick={props.deletePost}
+                    >
+                      Delete
+                    </Button>
+                  </>
+                ) : el.adoption ? (
                   <>
                     <Button
                       className="btn-color btn-hover"
@@ -95,6 +121,8 @@ function FeedCard(props) {
                     />
                     <ModalFormAdopt
                       show={modalShow.form}
+                      user={props.user}
+                      pet={el}
                       onHide={() => setModalShow({ ...modalShow, form: false })}
                     />
                   </>

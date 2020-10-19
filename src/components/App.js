@@ -8,8 +8,12 @@ import SignUp from "./public/SignUp.js";
 import Profile from "./private/Profile.js";
 import PrivateRoute from "./routeComponents/auth/privateRoute";
 
+import api from "../apis/index.js";
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedInUser");
@@ -18,15 +22,36 @@ function App() {
     setLoggedInUser({ ...parsedUser.user });
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      const response = await api.get("/profile");
+      setProfile(response.data);
+    })();
+  }, []);
+
+  if (typeof profile == {}) {
+    console.log(profile);
+    return <div></div>;
+  }
+
   return (
     <div className="">
       <BrowserRouter forceRefresh={true}>
         {loggedInUser._id ? (
           <Switch>
             <PrivateRoute
+              path="/profile/:id"
+              component={Profile}
+              user={loggedInUser}
+              // profile={profile}
+              // setProfile={setProfile}
+            />
+            <PrivateRoute
               path="/profile"
               component={Profile}
               user={loggedInUser}
+              profile={profile}
+              setProfile={setProfile}
             />
             <Route>
               <Redirect to="/profile" />
