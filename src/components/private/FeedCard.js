@@ -76,6 +76,7 @@ function FeedCard(props) {
                 {el.adoption ? (
                   <>
                     <Button
+                      className="btn-color btn-hover"
                       variant="primary"
                       onClick={() =>
                         setModalShow({ ...modalShow, state: true })
