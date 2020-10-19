@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 // import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -6,6 +7,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 import FriendCard from "./FriendCard";
+
+import api from "../../apis/index.js";
 
 function UserPage(props) {
   const [form, setForm] = useState({
@@ -15,6 +18,8 @@ function UserPage(props) {
     image: "",
     about: "",
   });
+
+  let history = useHistory();
 
   const profile = props.profile;
   // console.log(profile);
@@ -42,8 +47,9 @@ function UserPage(props) {
     console.log(form);
 
     try {
-      // const result = await api.post("/signup", state);
+      await api.patch("/user", form);
       // console.log(result);
+      history.push("/");
     } catch (err) {
       console.error(err);
     }
@@ -65,12 +71,7 @@ function UserPage(props) {
         </Form.Group>
         <Form.Group controlId="formEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email"
-            type="email"
-            placeholder={form.email}
-            disabled
-          />
+          <Form.Control name="email" placeholder={form.email} plaintext />
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group controlId="formPassword">
@@ -87,9 +88,9 @@ function UserPage(props) {
         <Form.Group controlId="formAbout">
           <Form.Label>About</Form.Label>
           <Form.Control
-            type="text"
+            as="textarea"
+            rows={3}
             name="about"
-            placeholder={profile.about}
             onChange={handleChange}
             value={form.about}
           />

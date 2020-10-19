@@ -15,12 +15,15 @@ import Logo from "../images/PetFriendlyLogo.png";
 
 import ModalCreatePost from "./ModalCreatePost";
 
-function Profile() {
+function Profile(props) {
   const [modal, setModal] = useState(false);
 
   const [pageState, setPageState] = useState({ page: "home" });
 
-  const [profile, setProfile] = useState({});
+  // const [profile, setProfile] = useState({});
+  const profile = props.profile;
+  console.log("props.match.params.idUser");
+  console.log(props.match.params.idUser);
 
   const [feed, setFeed] = useState({});
 
@@ -49,20 +52,18 @@ function Profile() {
   };
 
   // Gets user profile
-  useEffect(() => {
-    (async () => {
-      const response = await api.get("/profile");
-      setProfile(response.data);
-      // console.log(response.data);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const response = await api.get("/profile");
+  //     setProfile(response.data);
+  //   })();
+  // }, []);
 
   // Gets friend posts
   useEffect(() => {
     (async () => {
       const response = await api.get("/friendsposts");
       setFeed(response.data);
-      // console.log(response.data);
     })();
   }, []);
 
@@ -74,7 +75,8 @@ function Profile() {
         const response = await api.get("/friendsposts");
         // if(response.data)
         const sorted = sortResponse(response);
-        setFeed({ posts: sorted });
+        const newFeed = [...sorted, doge];
+        setFeed({ posts: newFeed });
         setPageState({ page: eventID });
         //
       } else if (event.currentTarget.id === "posts") {
@@ -85,7 +87,6 @@ function Profile() {
         setPageState({ page: eventID });
         //
       } else {
-        console.log("PROFILE");
         setPageState({ page: eventID });
       }
     })();
@@ -123,7 +124,6 @@ function Profile() {
 
   const handleLike = async (event) => {
     const postID = event.currentTarget.id;
-    console.log(postID);
     try {
       await api.post(`/postlike/${postID}`);
     } catch (err) {
@@ -133,7 +133,6 @@ function Profile() {
 
   const handleComments = async (event) => {
     const postID = event.currentTarget.id;
-    console.log(postID);
 
     try {
     } catch (err) {
@@ -281,7 +280,7 @@ function Profile() {
           </div>
         </div>
       ) : (
-        <UserPage profile={profile} setProfile={setProfile} />
+        <UserPage profile={profile} setProfile={props.setProfile} />
       )}
     </div>
   );
