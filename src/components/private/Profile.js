@@ -20,10 +20,7 @@ function Profile(props) {
 
   const [pageState, setPageState] = useState({ page: "home" });
 
-  // const [profile, setProfile] = useState({});
-  const profile = props.profile;
-  console.log("props.match.params.idUser");
-  console.log(props.match.params.idUser);
+  const [profile, setProfile] = useState({});
 
   const [feed, setFeed] = useState({});
 
@@ -51,18 +48,20 @@ function Profile(props) {
     userID: "5f8ccafa81c35c4e400c1d81",
   };
 
-  // Gets user profile
-  // useEffect(() => {
-  //   (async () => {
-  //     const response = await api.get("/profile");
-  //     setProfile(response.data);
-  //   })();
-  // }, []);
+  const { id } = { ...props.match.params };
 
-  // Gets friend posts
+  const profileID = id;
+
   useEffect(() => {
     (async () => {
-      const response = await api.get("/friendsposts");
+      const response = await api.get(`/profile/${profileID}`);
+      setProfile(response.data);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await api.get(`/friendsposts/${profileID}`);
       setFeed(response.data);
     })();
   }, []);
@@ -72,13 +71,11 @@ function Profile(props) {
       const eventID = event.currentTarget.id;
 
       if (event.currentTarget.id === "home") {
-        const response = await api.get("/friendsposts");
-        // if(response.data)
+        const response = await api.get(`/friendsposts/${profileID}`);
         const sorted = sortResponse(response);
         const newFeed = [...sorted, doge];
         setFeed({ posts: newFeed });
         setPageState({ page: eventID });
-        //
       } else if (event.currentTarget.id === "posts") {
         const response = await api.get("/post");
         const sorted = sortResponse(response);
@@ -258,7 +255,7 @@ function Profile(props) {
             </Card>
             {/* <Card className="profile-leftdiv-size mt-3 mb-3" border="secondary">
               <Card.Body> */}
-            <FriendCard deleteOpt={false} />
+            <FriendCard deleteOpt={false} friends={profile.friends} />
             {/* </Card.Body>
             </Card> */}
           </div>
