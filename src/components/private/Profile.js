@@ -277,7 +277,11 @@ function Profile(props) {
           </div>
         </div>
       ) : (
-        <UserPage profile={profile} setProfile={setProfile} />
+        <UserPage
+          profile={profile}
+          setProfile={setProfile}
+          friends={profile.friends}
+        />
       )}
     </div>
   );

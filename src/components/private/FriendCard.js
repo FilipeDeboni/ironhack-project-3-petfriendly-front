@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-// import { Redirect } from "react-router-dom";
-
 import api from "../../apis/index.js";
 
 function FriendCard(props) {
   let history = useHistory();
   const allFriends = props.friends;
-  // console.log("allFriends");
-  // console.log(allFriends);
-  // console.log("props.friends");
-  // console.log(props.friends);
-  // const [friends, setFriends] = useState({ allFriends });
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const response = await api.get("/userfriends");
-  //     console.log("response.data");
-  //     console.log(response.data);
-  //     setFriends(response.data.friends);
-  //   })();
-  // }, []);
 
   if (typeof allFriends == "undefined" || !allFriends.length) {
     return <div></div>;
@@ -41,7 +25,6 @@ function FriendCard(props) {
   const deleteFriend = async (event) => {
     const friendID = event.currentTarget.id.split("-")[1];
     await api.delete(`/friend/${friendID}`);
-    // console.log(friendID);
   };
 
   return (
