@@ -1,51 +1,59 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 import api from "../../apis/index.js";
 
 function FriendCard(props) {
-  const [friends, setFriends] = useState({});
+  let history = useHistory();
+  const allFriends = props.friends;
+  // console.log("allFriends");
+  // console.log(allFriends);
+  // console.log("props.friends");
+  // console.log(props.friends);
+  // const [friends, setFriends] = useState({ allFriends });
 
-  useEffect(() => {
-    (async () => {
-      const response = await api.get("/userfriends");
-      // console.log(response.data.friends);
-      setFriends(response.data.friends);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const response = await api.get("/userfriends");
+  //     console.log("response.data");
+  //     console.log(response.data);
+  //     setFriends(response.data.friends);
+  //   })();
+  // }, []);
 
-  if (typeof friends == "undefined" || !friends.length) {
+  if (typeof allFriends == "undefined" || !allFriends.length) {
     return <div></div>;
   }
 
-  const deleteFriend = async (event) => {
-    const friendID = event.currentTarget.id;
-    await api.delete(`/friend/${friendID}`);
+  const friendProfile = (event) => {
+    const friendID = event.currentTarget.id.split("-")[1];
+    console.log("friendID");
     console.log(friendID);
+    history.push(`/profile/${friendID}`);
   };
 
-  const friendProfile = (event) => {
-    const friendID = event.currentTarget.id;
-    console.log(friendID);
-
-    // return <Redirect to={`/profile/${friendID}`} />;
+  const deleteFriend = async (event) => {
+    const friendID = event.currentTarget.id.split("-")[1];
+    await api.delete(`/friend/${friendID}`);
+    // console.log(friendID);
   };
 
   return (
     <Card className="d-none d-xs-block d-sm-block" border="secondary">
       <ListGroup>
-        {friends.map((el, i) => (
+        {allFriends.map((el, i) => (
           <ListGroup.Item key={i}>
             <div className="d-flex align-items-center">
               <Button
                 style={{ cursor: "pointer" }}
                 onClick={friendProfile}
-                id={el._id}
+                id={`goto-${el._id}`}
               >
                 <img
                   className="friends-image"
@@ -57,7 +65,7 @@ function FriendCard(props) {
             </div>
 
             {props.deleteOpt ? (
-              <Button id={el._id} onClick={deleteFriend}>
+              <Button id={`delete-${el._id}`} onClick={deleteFriend}>
                 Delete
               </Button>
             ) : (
