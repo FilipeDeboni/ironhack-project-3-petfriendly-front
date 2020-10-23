@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
+import Navbar from "./Navbar";
 import FeedCard from "./FeedCard";
 import FriendCard from "./FriendCard";
 import UserPage from "./UserPage";
-
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-
 import api from "../../apis/index.js";
 import Logo from "../images/PetFriendlyLogo.png";
-
 import ModalCreatePost from "./ModalCreatePost";
+import "./Profile.css";
 
 function Profile(props) {
   const [modal, setModal] = useState(false);
@@ -138,71 +136,28 @@ function Profile(props) {
   };
 
   return (
-    <div className="">
-      <div className="header">
-        <div className="header-left">
-          <img src={Logo} alt="Pet Friendly logo" className="header-left" />
-        </div>
-        <div className="header-middle">
-          <button
-            className="header-button header-button-active"
-            onClick={changeTab}
-            id="home"
-          >
-            <i className="fas fa-home"></i>
-          </button>
-          <button
-            className="header-button header-button-active"
-            onClick={changeTab}
-            id="posts"
-          >
-            <i className="fas fa-clone"></i>
-          </button>
-          <button
-            className="header-button header-button-active"
-            onClick={changeTab}
-            id="profile"
-          >
-            <i className="fas fa-user-cog"></i>
-          </button>
-        </div>
-        <div className="header-right">
-          <Button
-            className="logout-button btn-color btn-hover "
-            variant="primary"
-            onClick={handleLogout}
-          >
-            {/* <a className="text-decoration-none" href="/"> */}
-            <i className="fas fa-sign-out-alt" href="/logout"></i>
-            {/* </a> */}
-          </Button>
-        </div>
-      </div>
+    <div className=" background-frame">
+      <Navbar />
       {pageState.page !== "profile" ? (
-        <div className="profile-columns pt-3">
-          <div className="profile-columns-padding">
-            {/* Profile section */}
-
-            <Card className="profile-leftdiv-size" border="secondary">
-              <Card.Body className="div-profile">
-                <div className="profile-img-name">
+        <div className="">
+          <Card className="profile-column p-3">
+            {/* User section */}
+            <Card className="rounded-corners">
+              <Card.Body className="profile-card-margin">
+                <div className="">
                   <Card.Img
-                    className="profile-image"
+                    className="profile-img"
                     variant="top"
                     src={profile.image}
                   />
-                  <Card.Title className="profile-name">
-                    {profile.name}
-                  </Card.Title>
+                  <Card.Title className="">{profile.name}</Card.Title>
                 </div>
                 <div>
-                  <Card.Text className="profile-description">
-                    {profile.about}
-                  </Card.Text>
+                  <Card.Text className="">{profile.about}</Card.Text>
                 </div>
-                <div className="pt-3">
+                <div className="">
                   <Button
-                    className="btn-color btn-hover"
+                    className=""
                     variant="primary"
                     onClick={() => setModal(true)}
                   >
@@ -217,15 +172,23 @@ function Profile(props) {
               </Card.Body>
             </Card>
 
-            <Card className="profile-leftdiv-size my-3" border="secondary">
+            {/* Form */}
+            <Card className="my-3 rounded-corners">
               <Card.Body>
                 <Form>
                   <Form.Group controlId="formGroupEmail">
-                    <Form.Label>Search</Form.Label>
+                    <Form.Label>Find more Pets</Form.Label>
                     <Form.Control
                       size="sm"
                       type="text"
                       placeholder="Pet Name"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formGroupEmail">
+                    <Form.Control
+                      size="sm"
+                      type="text"
+                      placeholder="Distance"
                     />
                   </Form.Group>
                   <Form.Row>
@@ -247,19 +210,15 @@ function Profile(props) {
                   <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Avaiable for Adoption" />
                   </Form.Group>
-                  <Button type="submit" className="btn-color btn-hover mb-2">
+                  <Button type="submit" className="">
                     Submit
                   </Button>
                 </Form>
               </Card.Body>
             </Card>
-            {/* <Card className="profile-leftdiv-size mt-3 mb-3" border="secondary">
-              <Card.Body> */}
             <FriendCard deleteOpt={false} friends={profile.friends} />
-            {/* </Card.Body>
-            </Card> */}
-          </div>
-          <div className="profile-columns-padding">
+          </Card>
+          <div className="">
             {pageState.page === "home" ? (
               <FeedCard
                 feed={feed}

@@ -1,0 +1,31 @@
+.background-frame {
+  background-color: #4f59e4;
+}
+
+.profile-column {
+  margin-bottom: 10px;
+  margin-left: 55px;
+  z-index: 2;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  background-color: #f5f5fa;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+.profile-img {
+  border-radius: 25px;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.rounded-corners {
+  border-radius: 25px;
+}
+
+.profile-card-margin {
+  margin: 10px;
+}

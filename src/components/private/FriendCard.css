@@ -1,0 +1,17 @@
+.friends-img {
+  border-radius: 22px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.btn-friends {
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+}
+
+.rounded-corners {
+  border-radius: 25px;
+}

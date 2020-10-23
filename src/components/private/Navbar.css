@@ -1,0 +1,53 @@
+.header {
+  height: 100vh;
+  width: 55px;
+  position: fixed;
+  z-index: 1;
+  background-color: #4f59e4;
+  /* #6f47a6 or #4F59E4 ? */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top {
+}
+
+.header-top button {
+  padding: 5px;
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}
+
+.header-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-middle button {
+  padding: 5px;
+  margin: 30px 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}
+
+.header-bottom {
+}
+
+.header-bottom button {
+  padding: 5px;
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}

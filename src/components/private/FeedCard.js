@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 
 import ModalTextAdopt from "./ModalTextAdopt";
 import ModalFormAdopt from "./ModalFormAdopt";
+import "./FeedCard.css";
 
 // import {
 //   EmailShareButton,
@@ -33,107 +34,124 @@ function FeedCard(props) {
 
   return (
     <div>
-      {allPosts.map((el, i) => (
-        <Card
-          key={`${i}`}
-          border="secondary"
-          // border={`${el.adoption ? "warning" : "secondary"}`}
-          className={`${
-            el.adoption
-              ? "adoption-background post-header mb-3"
-              : "post-header mb-3"
-          }`}
-        >
-          <Card.Body>
-            <Card.Img variant="top" src={el.image} className="mb-3 rounded" />
+      <div className="header-line"></div>
+      <div className="feed-card-margin">
+        {allPosts.map((el, i) => (
+          <div className="feed-center">
+            <Card
+              key={`${i}`}
+              border="none"
+              // border={`${el.adoption ? "warning" : "none"}`}
+              className={`${
+                el.adoption
+                  ? "rounded-corners feed-each-card adoption-background post-header mb-3"
+                  : "rounded-corners feed-each-card post-header mb-3"
+              }`}
+            >
+              <Card.Body>
+                <Card.Img
+                  variant="top"
+                  src={el.image}
+                  className="mb-3 feed-img"
+                />
 
-            <div className="d-flex justify-content-between">
-              <Card.Subtitle className="mb-2">{el.petName}</Card.Subtitle>
+                <div className="d-flex justify-content-between">
+                  <Card.Subtitle className="mb-2 pet-name-text">
+                    {el.petName}
+                  </Card.Subtitle>
 
-              {el.userID.name ? (
-                <Card.Subtitle className="mb-2">
-                  <span className="text-muted">by </span>
-                  {el.userID.name}
-                </Card.Subtitle>
-              ) : (
-                ""
-              )}
-            </div>
-            <Card.Text>{el.description}</Card.Text>
-            <div className="icons-div d-flex justify-content-between">
-              <div>
-                <Button
-                  className="post-icon"
-                  variant="primary"
-                  id={el._id}
-                  onClick={props.handleLike}
-                >
-                  <i className="pr-1 fas fa-paw"></i>
-                  {el.likes.length}
-                  <span className=""> likes</span>
-                </Button>
-                <Button
-                  className="post-icon"
-                  variant="primary"
-                  id={el._id}
-                  onClick={props.handleComments}
-                >
-                  <i className="pr-1 fas fa-feather"></i>
-                  {el.comments.length}
-                  <span className=""> comments</span>
-                </Button>
-                <Button className="post-icon" variant="primary">
-                  <i className="pr-1 fas fa-egg"></i>
-                  <span className=""> share</span>
-                </Button>
-                {/* <FacebookShareButton url={shareUrl}/> */}
-              </div>
-              <div>
-                {el.userID === userID ? (
-                  <>
+                  {el.userID.name ? (
+                    <Card.Subtitle className="mb-2">
+                      <span className="text-muted">by </span>
+                      <img
+                        src={el.userID.image}
+                        className="image-post-creator"
+                      ></img>
+                      {el.userID.name}
+                    </Card.Subtitle>
+                  ) : (
+                    ""
+                  )}
+                </div>
+                <Card.Text>{el.description}</Card.Text>
+                <div className="d-flex justify-content-between">
+                  <div className="">
                     <Button
-                      variant="danger"
-                      id={el._id}
-                      onClick={props.deletePost}
-                    >
-                      Delete
-                    </Button>
-                  </>
-                ) : el.adoption ? (
-                  <>
-                    <Button
-                      className="btn-color btn-hover"
+                      className="button-interaction"
                       variant="primary"
-                      onClick={() =>
-                        setModalShow({ ...modalShow, state: true })
-                      }
+                      id={el._id}
+                      onClick={props.handleLike}
                     >
-                      Adopt
+                      <i className="icon far fa-heart"></i>
+                      {el.likes.length}
+                      <span className="text-interaction"> likes</span>
                     </Button>
-                    <ModalTextAdopt
-                      show={modalShow.state}
-                      onHide={() =>
-                        setModalShow({ ...modalShow, state: false })
-                      }
-                      onAccept={() =>
-                        setModalShow({ form: true, state: false })
-                      }
-                    />
-                    <ModalFormAdopt
-                      show={modalShow.form}
-                      user={props.user}
-                      pet={el}
-                      onHide={() => setModalShow({ ...modalShow, form: false })}
-                    />
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      ))}
+                    <Button
+                      className="button-interaction"
+                      variant="primary"
+                      id={el._id}
+                      onClick={props.handleComments}
+                    >
+                      <i className="icon fas fa-feather"></i>
+                      {el.comments.length}
+                      <span className="text-interaction"> comments</span>
+                    </Button>
+                    <Button className="button-interaction" variant="primary">
+                      <i className="icon fas fa-egg"></i>
+                      <span className="text-interaction"> share</span>
+                    </Button>
+                    {/* <FacebookShareButton url={shareUrl}/> */}
+                  </div>
+                  <div>
+                    {el.userID === userID ? (
+                      <>
+                        <Button
+                          variant="danger"
+                          id={el._id}
+                          onClick={props.deletePost}
+                        >
+                          Delete
+                        </Button>
+                      </>
+                    ) : el.adoption ? (
+                      <>
+                        <Button
+                          className=""
+                          variant="primary"
+                          onClick={() =>
+                            setModalShow({ ...modalShow, state: true })
+                          }
+                        >
+                          Adopt
+                        </Button>
+                        <ModalTextAdopt
+                          show={modalShow.state}
+                          onHide={() =>
+                            setModalShow({ ...modalShow, state: false })
+                          }
+                          onAccept={() =>
+                            setModalShow({ form: true, state: false })
+                          }
+                        />
+                        <ModalFormAdopt
+                          show={modalShow.form}
+                          user={props.user}
+                          pet={el}
+                          onHide={() =>
+                            setModalShow({ ...modalShow, form: false })
+                          }
+                        />
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

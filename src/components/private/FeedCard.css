@@ -1,0 +1,62 @@
+.header-line {
+  height: 10px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #4f59e4;
+  top: 0;
+}
+
+.feed-card-margin {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 355px;
+  padding: 15px;
+  max-width: 100%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.feed-each-card {
+  max-width: 740px;
+}
+
+.feed-img {
+  height: 700px;
+  width: 700px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.adoption-background {
+  background-color: #f0d775;
+}
+
+.feed-center {
+  display: flex;
+  justify-content: center;
+}
+
+.button-interaction {
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  color: black;
+}
+
+.icon {
+  font-size: 1.3rem;
+}
+
+.image-post-creator {
+  margin: 0 10px;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+}
+
+.pet-name-text {
+  margin: 0;
+  padding-top: 5px;
+}

@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 import api from "../../apis/index.js";
+import "./FriendCard.css";
 
 function FriendCard(props) {
   let history = useHistory();
@@ -28,24 +29,24 @@ function FriendCard(props) {
   };
 
   return (
-    <Card className="d-none d-xs-block d-sm-block" border="secondary">
+    <Card className="rounded-corners" border="none">
       <ListGroup>
         {allFriends.map((el, i) => (
-          <ListGroup.Item key={i}>
+          <div key={i}>
             <div className="d-flex">
-              <Button
+              <button
                 className="btn-friends"
                 style={{ cursor: "pointer" }}
                 onClick={friendProfile}
                 id={`goto-${el._id}`}
               >
                 <img
-                  className="friends-image"
+                  className="friends-img"
                   src={el.image}
                   alt={`${el.name}`}
                 />
                 <span className="pl-3">{el.name}</span>
-              </Button>
+              </button>
             </div>
 
             {props.deleteOpt ? (
@@ -59,7 +60,7 @@ function FriendCard(props) {
             ) : (
               ""
             )}
-          </ListGroup.Item>
+          </div>
         ))}
       </ListGroup>
     </Card>
