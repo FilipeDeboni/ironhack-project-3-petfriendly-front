@@ -10,15 +10,12 @@ function Navbar(props) {
   return (
     <div className="background-frame">
       <div className="header">
-        <div className="header-top">
-          <button
-            className="logout-button btn-color btn-hover "
-            variant="primary"
-            //   onClick={handleLogout}
-          >
-            <i className="fas fa-sign-out-alt" href="/logout"></i>
+        <div className="header-bottom">
+          <button>
+            <i class="fas fa-plus"></i>
           </button>
         </div>
+
         <div className="header-middle">
           <button
             className="header-button header-button-active"
@@ -43,9 +40,13 @@ function Navbar(props) {
           </button>
         </div>
 
-        <div className="header-bottom">
-          <button>
-            <i class="fas fa-plus"></i>
+        <div className="header-top">
+          <button
+            className="logout-button btn-color btn-hover "
+            variant="primary"
+            //   onClick={handleLogout}
+          >
+            <i className="fas fa-sign-out-alt" href="/logout"></i>
           </button>
         </div>
       </div>

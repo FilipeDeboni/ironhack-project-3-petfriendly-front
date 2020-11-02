@@ -143,20 +143,20 @@ function Profile(props) {
           <Card className="profile-column p-3">
             {/* User section */}
             <Card className="rounded-corners">
-              <Card.Body className="profile-card-margin">
-                <div className="">
+              <Card.Body className="profile-card-margin row justify-content-center">
+                <div className="row justify-content-center">
                   <Card.Img
                     className="profile-img"
                     variant="top"
                     src={profile.image}
                   />
-                  <Card.Title className="">{profile.name}</Card.Title>
+                  <Card.Title className="mt-2">{profile.name}</Card.Title>
                 </div>
                 <div>
-                  <Card.Text className="">{profile.about}</Card.Text>
+                  <Card.Text className="mb-2">{profile.about}</Card.Text>
                 </div>
                 <div className="">
-                  <Button
+                  {/* <Button
                     className=""
                     variant="primary"
                     onClick={() => setModal(true)}
@@ -167,7 +167,7 @@ function Profile(props) {
                     userID={profile._id}
                     show={modal}
                     onHide={() => setModal(false)}
-                  />
+                  /> */}
                 </div>
               </Card.Body>
             </Card>
