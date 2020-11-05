@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 
 import Home from "./public/Home";
+import LogIn from "./public/LogIn.js";
 import SignUp from "./public/SignUp.js";
 import Profile from "./private/Profile.js";
 import PrivateRoute from "./routeComponents/auth/privateRoute";
@@ -33,8 +34,8 @@ function App() {
           </Switch>
         ) : (
           <Switch>
+            <Route path="/login" component={LogIn} />
             <Route path="/signup" component={SignUp} />
-            {/* login path */}
             <Route path="/" component={Home} />
             <Route>
               <Redirect to="/" />

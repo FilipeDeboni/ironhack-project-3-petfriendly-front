@@ -7,9 +7,10 @@ const api = axios.create({
 
 const storedUser = localStorage.getItem("loggedInUser");
 
-// Parse converte de linha única para objeto, mais legível
+// Parse converte de linha única para objeto, mais legível (contrário do stringify usado no Home.js)
 const loggedInUser = JSON.parse(storedUser || '""');
 
+// Intercepta a comunicação entre front e back e acrescenta no cabeçalho da requisição HTTP o token (o que funciona como o Cookie) do tipo bearer
 api.interceptors.request.use((config) => {
   config.headers = {
     Authorization: `Bearer ${loggedInUser.token}`,

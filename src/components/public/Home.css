@@ -1,0 +1,96 @@
+.home-card {
+  padding: 0;
+  margin: 0;
+}
+
+.home-first-square {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 65vh;
+  min-height: 400px;
+}
+
+.home-small-square {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.first-img {
+  background-image: url("../images/home.png");
+}
+
+.sec-img {
+  background-image: url("../images/friends.png");
+}
+
+.third-img {
+  background-image: url("../images/adopt.png");
+}
+
+.fourth-img {
+  background-image: url("../images/cute.png");
+}
+
+.home-title {
+  padding: 10px;
+  font-size: 6rem;
+  font-family: "Raleway", sans-serif;
+  filter: opacity(0.8);
+  margin-bottom: 0;
+}
+
+.home-logo {
+  font-size: 7rem;
+  font-family: "Fredoka One", cursive;
+
+  filter: opacity(0.8);
+  margin-bottom: 0;
+}
+
+.title-color-1 {
+  color: var(--quarternary);
+}
+
+.title-color-2 {
+  color: var(--primary);
+}
+
+.title-color-3 {
+  color: var(--tertiary);
+}
+
+.logo-div {
+  padding: 30px 30px 0 30px;
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-height {
+  object-fit: contain;
+}
+
+.home-button {
+  padding: 10px 15px 10px 15px;
+  margin: 5px;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  border-radius: 25px;
+  background-color: #639bb2;
+  color: #5a4f68;
+  text-align: center;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  background-color: var(--tertiary);
+  transition: 0.6s;
+}

@@ -1,3 +1,12 @@
+:root {
+  --primary: #3f3250;
+  --secondary: #675682;
+  --tertiary: #67aeca;
+  --quarternary: #e14658;
+}
+
+/* color: var(--primary); */
+
 .App {
   font-family: "Montserrat", sans-serif;
 }
@@ -18,102 +27,43 @@
   min-height: 92vh;
 }
 
-.max-height {
+/* .max-height {
   height: 92vh;
-}
-
-.logo-height {
-  object-fit: contain;
-  width: 50%;
-  height: 20vh;
-}
+} */
 
 .form-height {
   height: 72vh;
-  border-radius: 2%;
+  border-radius: 20px;
 }
 
 .card {
-  border-radius: 2%;
+  border-radius: 20px;
 }
 
-.first-img-height {
-  object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 92vh;
-
-  border-radius: 2%;
-}
-
-.half-div-card {
-  margin: 4vh;
-  min-height: 40vh;
-}
-
-.half-maxheight {
-  height: 40vh;
-}
-
-.others-img-heigh {
-  object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
-  height: 40vh;
-  border-radius: 2%;
-}
-
-.about-session {
-  max-width: 80%;
-}
 .text-white {
   color: white;
 }
 
-.home-background {
-  margin-top: -2rem;
-  height: 40vh;
-  width: 100%;
-  background-color: #ffd166;
-  position: absolute;
-}
-
 #background {
-  background: #073b4c;
-}
-
-.background-bottom1 {
-  background-color: #4ca1af;
-  margin-top: 4vh;
-  height: 32vh;
-  width: 100%;
-  position: absolute;
-}
-
-.background-bottom2 {
-  background-color: #073b4c;
-  margin-top: 4vh;
-  height: 32vh;
-  width: 100%;
-  position: absolute;
+  background-color: var(--primary);
 }
 
 .btn-color {
-  background-color: #073b4c;
+  background-color: var(--primary);
   color: white;
   border: none;
 }
 
 .btn-hover:hover {
   transition: all 0.5s ease-out;
-  background-color: #4ca1af;
+  background-color: var(--secondary);
   border: none;
   color: white;
 }
 
 .profile-card {
   background-color: white;
-  border-radius: 3%;
+  border-radius: 20px;
 }
 
 .header {
