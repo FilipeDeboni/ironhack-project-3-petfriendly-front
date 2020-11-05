@@ -1,14 +1,22 @@
-.header {
+.header-navbar {
   height: 100vh;
   width: 55px;
   position: fixed;
   z-index: 1;
-  background-color: #4f59e4;
-  /* #6f47a6 or #4F59E4 ? */
+  background-color: var(--primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-line {
+  height: 10px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: var(--primary);
+  top: 0;
 }
 
 .header-top {
@@ -24,7 +32,7 @@
   color: white;
 }
 
-.header-middle {
+.header-middle-nav {
   display: flex;
   flex-direction: column;
 }
@@ -39,9 +47,6 @@
   color: white;
 }
 
-.header-bottom {
-}
-
 .header-bottom button {
   padding: 5px;
   margin: 20px 0;
@@ -50,4 +55,35 @@
   background-color: transparent;
   border: transparent;
   color: white;
+}
+
+.header-button-nav {
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: transparent;
+  color: black;
+}
+
+.logout-button:hover {
+  background-color: transparent;
+  border: transparent;
+  color: black;
+}
+
+.add-post-btn {
+  font-size: 1.6rem;
 }

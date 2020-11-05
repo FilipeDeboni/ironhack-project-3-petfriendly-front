@@ -8,31 +8,31 @@ import "./Navbar.css";
 
 function Navbar(props) {
   return (
-    <div className="background-frame">
-      <div className="header">
-        <div className="header-bottom">
-          <button>
+    <div className="">
+      <div className="header-navbar">
+        <div className="">
+          <button className="add-post-btn btn-color btn-hover pt-3">
             <i class="fas fa-plus"></i>
           </button>
         </div>
 
-        <div className="header-middle">
+        <div className="header-middle-nav">
           <button
-            className="header-button header-button-active"
+            className="header-button-nav"
             //   onClick={changeTab}
             id="home"
           >
             <i className="fas fa-home"></i>
           </button>
           <button
-            className="header-button header-button-active"
+            className="header-button-nav"
             //   onClick={changeTab}
             id="posts"
           >
             <i className="fas fa-clone"></i>
           </button>
           <button
-            className="header-button header-button-active"
+            className="header-button-nav"
             //   onClick={changeTab}
             id="profile"
           >
@@ -42,7 +42,7 @@ function Navbar(props) {
 
         <div className="header-top">
           <button
-            className="logout-button btn-color btn-hover "
+            className="logout-button btn-color btn-hover pb-3"
             variant="primary"
             //   onClick={handleLogout}
           >

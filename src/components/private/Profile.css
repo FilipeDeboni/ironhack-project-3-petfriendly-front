@@ -1,5 +1,5 @@
 .background-frame {
-  background-color: #4f59e4;
+  background-color: var(--primary);
 }
 
 .profile-column {
@@ -9,7 +9,7 @@
   height: 100%;
   width: 300px;
   position: fixed;
-  background-color: #f5f5fa;
+  background-color: var(--secondary);
   display: flex;
   flex-direction: column;
   border-radius: 25px;

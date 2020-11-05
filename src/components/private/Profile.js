@@ -136,7 +136,7 @@ function Profile(props) {
   };
 
   return (
-    <div className=" background-frame">
+    <div className="background-frame">
       <Navbar />
       {pageState.page !== "profile" ? (
         <div className="">
@@ -144,14 +144,14 @@ function Profile(props) {
             {/* User section */}
             <Card className="rounded-corners">
               <Card.Body className="profile-card-margin row justify-content-center">
-                <div className="row justify-content-center">
-                  <Card.Img
-                    className="profile-img"
-                    variant="top"
-                    src={profile.image}
-                  />
-                  <Card.Title className="mt-2">{profile.name}</Card.Title>
-                </div>
+                {/* <div className="row justify-content-center"> */}
+                <Card.Img
+                  className="profile-img"
+                  variant="top"
+                  src={profile.image}
+                />
+                <Card.Title className="mt-2">{profile.name}</Card.Title>
+                {/* </div> */}
                 <div>
                   <Card.Text className="mb-2">{profile.about}</Card.Text>
                 </div>
@@ -210,9 +210,11 @@ function Profile(props) {
                   <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Avaiable for Adoption" />
                   </Form.Group>
-                  <Button type="submit" className="">
-                    Submit
-                  </Button>
+                  <div className="d-flex justify-content-end">
+                    <Button type="submit" className="btn-color">
+                      Submit
+                    </Button>
+                  </div>
                 </Form>
               </Card.Body>
             </Card>
