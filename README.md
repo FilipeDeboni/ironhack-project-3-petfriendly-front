@@ -1,4 +1,4 @@
-# Pet Friend.ly - a social network with pet adoption feature
+# Pet Friend.ly - a social network with feature for pet adoption
 
 You can access et Friend.ly here: https://ironhack-project-3-petfriendly.herokuapp.com/
 
