@@ -22,7 +22,6 @@ function UserPage(props) {
   let history = useHistory();
 
   const profile = props.profile;
-  // console.log(profile);
 
   useEffect(() => {
     setForm({
@@ -44,11 +43,9 @@ function UserPage(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(form);
 
     try {
       await api.patch("/user", form);
-      // console.log(result);
       history.push("/");
     } catch (err) {
       console.error(err);

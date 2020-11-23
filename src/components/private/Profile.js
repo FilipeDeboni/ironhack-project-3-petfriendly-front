@@ -144,14 +144,12 @@ function Profile(props) {
             {/* User section */}
             <Card className="rounded-corners">
               <Card.Body className="profile-card-margin row justify-content-center">
-                {/* <div className="row justify-content-center"> */}
                 <Card.Img
                   className="profile-img"
                   variant="top"
                   src={profile.image}
                 />
                 <Card.Title className="mt-2">{profile.name}</Card.Title>
-                {/* </div> */}
                 <div>
                   <Card.Text className="mb-2">{profile.about}</Card.Text>
                 </div>

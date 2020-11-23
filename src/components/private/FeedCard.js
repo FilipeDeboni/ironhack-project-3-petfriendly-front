@@ -7,25 +7,10 @@ import ModalTextAdopt from "./ModalTextAdopt";
 import ModalFormAdopt from "./ModalFormAdopt";
 import "./FeedCard.css";
 
-// import {
-//   EmailShareButton,
-//   FacebookShareButton,
-//   LinkedinShareButton,
-//   LivejournalShareButton,
-//   PinterestShareButton,
-//   RedditShareButton,
-//   TelegramShareButton,
-//   TumblrShareButton,
-//   TwitterShareButton,
-//   WhatsappShareButton,
-// } from "react-share";
-
 function FeedCard(props) {
   // const [modalShow, setModalShow] = useState(false);
   const [modalShow, setModalShow] = useState({ state: false, form: false });
-  // console.log(props.user);
   const allPosts = props.feed.posts;
-  // console.log(props);
 
   const userID = props.user._id;
   if (typeof allPosts == "undefined") {
@@ -100,7 +85,6 @@ function FeedCard(props) {
                       <i className="icon fas fa-egg"></i>
                       <span className="text-interaction"> share</span>
                     </Button>
-                    {/* <FacebookShareButton url={shareUrl}/> */}
                   </div>
                   <div>
                     {el.userID === userID ? (

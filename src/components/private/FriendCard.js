@@ -18,8 +18,6 @@ function FriendCard(props) {
 
   const friendProfile = (event) => {
     const friendID = event.currentTarget.id.split("-")[1];
-    console.log("friendID");
-    console.log(friendID);
     history.push(`/profile/${friendID}`);
   };
 
