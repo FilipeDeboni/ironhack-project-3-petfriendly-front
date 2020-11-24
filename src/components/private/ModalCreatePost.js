@@ -30,7 +30,6 @@ function ModalCreatePost(props) {
     event.preventDefault();
     try {
       await api.post("/post", form);
-      // const result = await api.post("/post", form);
       props.onHide();
     } catch (err) {
       console.error(err);
