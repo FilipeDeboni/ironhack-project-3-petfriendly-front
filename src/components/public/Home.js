@@ -62,13 +62,13 @@ function Home(props) {
           </div>
         </div>
 
-        <div className="home-small-square third-img col-12 col-md-6 col-lg-4 p-0">
-          <h1 className="home-title title-color-1 mx-5">Adopt a Pet</h1>
+        <div className="home-small-square third-img col-12 col-md-6 col-lg-4">
+          <h1 className="home-title title-color-1">Adopt a Pet</h1>
         </div>
-        <div className="home-small-square sec-img col-12 col-md-6 col-lg-4 p-0">
+        <div className="home-small-square sec-img col-12 col-md-6 col-lg-4">
           <h1 className="home-title title-color-2">Make Friends</h1>
         </div>
-        <div className="home-small-square fourth-img col-12 col-md-12 col-lg-4 p-0">
+        <div className="home-small-square fourth-img col-12 col-md-12 col-lg-4">
           <h1 className="home-title title-color-3">Find Cute Pictures</h1>
         </div>
       </div>

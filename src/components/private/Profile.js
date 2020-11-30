@@ -9,8 +9,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import api from "../../apis/index.js";
-import Logo from "../images/PetFriendlyLogo.png";
-import ModalCreatePost from "./ModalCreatePost";
+// import Logo from "../images/PetFriendlyLogo.png";
+// import ModalCreatePost from "./ModalCreatePost";
 import "./Profile.css";
 
 function Profile(props) {

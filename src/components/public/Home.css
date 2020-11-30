@@ -3,23 +3,24 @@
   margin: 0;
 }
 
+/* Fazer botão acima do logo para celular */
+
 .home-first-square {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 65vh;
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .home-small-square {
+  padding: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 35vh;
-  min-height: 300px;
+  min-height: 200px;
   display: flex;
-  align-items: center;
-  text-align: center;
 }
 
 .first-img {
@@ -38,20 +39,23 @@
   background-image: url("../images/cute.png");
 }
 
-.home-title {
-  padding: 10px;
-  font-size: 6rem;
-  font-family: "Raleway", sans-serif;
+.home-logo {
+  font-size: 7rem;
+  font-family: "Fredoka One", cursive;
   filter: opacity(0.8);
   margin-bottom: 0;
 }
 
-.home-logo {
-  font-size: 7rem;
-  font-family: "Fredoka One", cursive;
-
+.home-title {
+  padding: 10px;
+  padding-left: 15%;
+  width: 100%;
+  font-size: 5.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
   filter: opacity(0.8);
   margin-bottom: 0;
+  text-align: right !important;
 }
 
 .title-color-1 {
@@ -93,4 +97,27 @@
 .home-button:hover {
   background-color: var(--tertiary);
   transition: 0.6s;
+}
+
+@media (max-width: 575px) {
+  .home-first-square {
+    height: 30vh;
+  }
+  .home-small-square {
+    height: 25vh;
+  }
+  .logo-div {
+    padding: 40px 20px 0 20px;
+  }
+  .home-logo {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0 !important;
+  }
+  .home-title {
+    font-size: 3.5rem;
+    display: flex;
+    text-align: center !important;
+    align-items: center !important;
+  }
 }
