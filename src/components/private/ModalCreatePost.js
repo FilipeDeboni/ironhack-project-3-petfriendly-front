@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
 import api from "../../apis/index.js";
 
 function ModalCreatePost(props) {

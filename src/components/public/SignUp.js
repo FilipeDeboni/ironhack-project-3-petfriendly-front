@@ -44,7 +44,7 @@ function SignUp() {
               <div className="row">
                 <div className="mx-auto my-auto">
                   <div className="card card-signup my-5">
-                    <div className="card-body ">
+                    <div className="card-body">
                       <h4 className="card-title text-center">Sign Up</h4>
                       <form className="form-signin" onSubmit={handleSubmit}>
                         <div className="form-label-group pb-2">

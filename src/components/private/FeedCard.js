@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
-import ModalTextAdopt from "./ModalTextAdopt";
-import ModalFormAdopt from "./ModalFormAdopt";
+// import ModalTextAdopt from "./ModalTextAdopt";
+// import ModalFormAdopt from "./ModalFormAdopt";
 import "./FeedCard.css";
 
 function FeedCard(props) {
@@ -20,27 +18,36 @@ function FeedCard(props) {
   return (
     <div>
       <div className="header-line"></div>
-      <div className="feed-card-margin">
+      <div className="feed-card-margin row justify-content-center">
         {allPosts.map((el, i) => (
-          <div className="feed-center">
-            <Card
-              key={`${i}`}
-              border="none"
-              // border={`${el.adoption ? "warning" : "none"}`}
-              className={`${
-                el.adoption
-                  ? "rounded-corners feed-each-card adoption-background post-header mb-3"
-                  : "rounded-corners feed-each-card post-header mb-3"
-              }`}
-            >
-              <Card.Body>
-                <Card.Img
-                  variant="top"
-                  src={el.image}
-                  className="mb-3 feed-img"
-                />
+          <div
+            key={`${i}`}
+            className={`${el.adoption ? "adoption-background" : ""}`}
+          >
+            <Card style={{ borderRadius: 8 }} className="feed-img-border">
+              <Card.Img variant="top" src={el.image} className="feed-img" />
+              <Card.Body className="post-overlay">
+                <Button
+                  className="button-interaction"
+                  variant="primary"
+                  id={el._id}
+                  onClick={props.handleLike}
+                >
+                  <i className="icon fas fa-paw"></i> {el.likes.length}
+                  <span className="text-interaction"> likes</span>
+                </Button>
+                <Button
+                  className="button-interaction"
+                  variant="primary"
+                  id={el._id}
+                  onClick={props.handleComments}
+                >
+                  <i className="icon fas fa-feather"></i> {el.comments.length}
+                  <span className="text-interaction"> comments</span>
+                </Button>
+              </Card.Body>
 
-                <div className="d-flex justify-content-between">
+              {/* <div className="d-flex justify-content-between">
                   <Card.Subtitle className="mb-2 pet-name-text">
                     {el.petName}
                   </Card.Subtitle>
@@ -57,8 +64,9 @@ function FeedCard(props) {
                   ) : (
                     ""
                   )}
-                </div>
-                <Card.Text>{el.description}</Card.Text>
+                </div> */}
+
+              {/* <Card.Text>{el.description}</Card.Text>
                 <div className="d-flex justify-content-between">
                   <div className="">
                     <Button
@@ -130,8 +138,7 @@ function FeedCard(props) {
                       ""
                     )}
                   </div>
-                </div>
-              </Card.Body>
+                </div> */}
             </Card>
           </div>
         ))}
