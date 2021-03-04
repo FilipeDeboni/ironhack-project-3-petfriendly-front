@@ -2,7 +2,9 @@ import axios from "axios";
 
 // Criando uma instancia "pré-configurada" do Axios, com a raiz do endereço do nosso servidor
 const api = axios.create({
-  baseURL: "http://localhost:1234/api",
+  baseURL: "https://ironhack-project-3-petfriendly.herokuapp.com/api",
+  // Acesso Local
+  // baseURL: "http://localhost:4000/api",
 });
 
 const storedUser = localStorage.getItem("loggedInUser");
