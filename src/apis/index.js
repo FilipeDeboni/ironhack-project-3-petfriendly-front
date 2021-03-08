@@ -4,7 +4,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "https://ironhack-project-3-petfriendly.herokuapp.com/api",
   // Acesso Local
-  // baseURL: "http://localhost:4000/api",
+  // baseURL: "http://localhost:3000/api",
 });
 
 const storedUser = localStorage.getItem("loggedInUser");
